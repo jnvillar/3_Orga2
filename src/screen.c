@@ -285,9 +285,9 @@ void screen_stop_game_show_winner(jugador_t *j) {
 
 void aux_limpiarPantalla(){
     int i = 0;
-    while (i<49){
+    while (i<50){
         int j = 0;
-        while(j<79){
+        while(j<80){
             p[i][j].c = 2;
             p[i][j].a = 11;
             j++;
