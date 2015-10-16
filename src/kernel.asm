@@ -6,6 +6,8 @@
 %include "imprimir.mac"
 
 global start
+extern GDT_DESC
+extern aux_limpiarPantalla
 
 
 ;; Saltear seccion de datos
@@ -45,9 +47,11 @@ start:
 
     call habilitar_A20
 
+    imprimir_texto_mr iniciando_mr_msg, iniciando_mr_len, 0x07, 0, 0
+
     ; Cargar la GDT
 
-    lgdt [GDT_DESC+2] 
+    lgdt [GDT_DESC] 
 
     ; Setear el bit PE del registro CR0
 
@@ -57,24 +61,38 @@ start:
 
     ; Saltar a modo protegido
 
-    jmp 0x08:modoprotegido
+    jmp 0x40:modoprotegido
+
 
     modoprotegido:
+BITS 32
 
     ; Establecer selectores de segmentos
 
-    mov ax, 1
+    mov ax, 0x48
     mov ds, ax
-    mov ax, 3
+    mov ax, 0x48
     mov ss, ax
 
     ; Establecer la base de la pila
 
-
+    mov ebp, 0x27000
+    mov esp, 0x27000
 
     ; Imprimir mensaje de bienvenida
 
+
+    mov ax, 0x60
+    mov fs, ax
+    mov word [fs:0x00], 0x1023
+    mov word [fs:0x02], 0x1024
+    mov word [fs:0x04], 0x1024
+    mov word [fs:0x06], 0x1024
+
+
     ; Inicializar el juego
+
+    call aux_limpiarPantalla
 
     ; Inicializar pantalla
 

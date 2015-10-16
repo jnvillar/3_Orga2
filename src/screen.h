@@ -21,6 +21,8 @@
 #include "sched.h"
 #include "game.h"
 
+//global aux_limpiarPantalla
+
 /* Estructura de para acceder a memoria de video */
 typedef struct ca_s {
     unsigned char c;
@@ -85,5 +87,6 @@ void screen_pintar_relojes();
 void screen_actualizar_posicion_mapa(uint x, uint y);
 void screen_stop_game_show_winner(jugador_t *j);
 
+//void aux_limpiarPantalla();
 
 #endif  /* !__SCREEN_H__ */

@@ -33,8 +33,25 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
 
+    // CODIGO, NIVEL 0 (E/R)
+    [GDT_IDX_NULL_DESC+8] = (gdt_entry) {
+        (unsigned short)    0xF400,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x0A,           /* type         */
+        (unsigned char)     0x01,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x01,           /* limit[16:19] */
+        (unsigned char)     0x00,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x01,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+
     // DATA, NIVEL 0 (R/W)
-    [GDT_IDX_NULL_DESC+1] = (gdt_entry) {
+    [GDT_IDX_NULL_DESC+9] = (gdt_entry) {
         (unsigned short)    0xF400,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -51,7 +68,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },    
 
     // DATA, NIVEL 3 (R/W)
-    [GDT_IDX_NULL_DESC+2] = (gdt_entry) {
+    [GDT_IDX_NULL_DESC+10] = (gdt_entry) {
         (unsigned short)    0xF400,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -65,29 +82,11 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x01,           /* db           */
         (unsigned char)     0x01,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
-    }, 
-
-
-    // CODIGO, NIVEL 0 (E/R)
-    [GDT_IDX_NULL_DESC+3] = (gdt_entry) {
-        (unsigned short)    0xF400,         /* limit[0:15]  */
-        (unsigned short)    0x0000,         /* base[0:15]   */
-        (unsigned char)     0x00,           /* base[23:16]  */
-        (unsigned char)     0x0A,           /* type         */
-        (unsigned char)     0x01,           /* s            */
-        (unsigned char)     0x00,           /* dpl          */
-        (unsigned char)     0x01,           /* p            */
-        (unsigned char)     0x01,           /* limit[16:19] */
-        (unsigned char)     0x00,           /* avl          */
-        (unsigned char)     0x00,           /* l            */
-        (unsigned char)     0x01,           /* db           */
-        (unsigned char)     0x01,           /* g            */
-        (unsigned char)     0x00,           /* base[31:24]  */
-    }, 
+    },      
 
 
     // CODIGO, NIVEL 3 (E/R)
-    [GDT_IDX_NULL_DESC+4] = (gdt_entry) {
+    [GDT_IDX_NULL_DESC+11] = (gdt_entry) {
         (unsigned short)    0xF400,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -101,7 +100,25 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x01,           /* db           */
         (unsigned char)     0x01,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
-    },  
+    }, 
+
+
+    // VIDEO
+    [GDT_IDX_NULL_DESC+12] = (gdt_entry) {
+        (unsigned short)    0x8000,         /* limit[0:15]  */
+        (unsigned short)    0x8000,         /* base[0:15]   */
+        (unsigned char)     0x0B,           /* base[23:16]  */
+        (unsigned char)     0x02,           /* type         */
+        (unsigned char)     0x01,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x02,           /* limit[16:19] */
+        (unsigned char)     0x00,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    }, 
 
 
 };
