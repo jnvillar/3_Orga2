@@ -7,8 +7,11 @@
 
 global start
 extern GDT_DESC
+extern IDT_DESC
 extern aux_limpiarPantalla
-
+extern screen_inicializar
+extern idt_inicializar
+extern game_inicializar
 
 ;; Saltear seccion de datos
 jmp start
@@ -92,9 +95,12 @@ BITS 32
 
     ; Inicializar el juego
 
-    call aux_limpiarPantalla
+    call game_inicializar
 
     ; Inicializar pantalla
+
+    call aux_limpiarPantalla    
+    call screen_inicializar
 
     ; Inicializar el manejador de memoria
 
@@ -112,7 +118,15 @@ BITS 32
 
     ; Inicializar la IDT
 
+    call idt_inicializar
+
     ; Cargar IDT
+
+    lidt [IDT_DESC]
+
+    mov eax, 0
+    mov ecx, 1
+    div ecx
 
     ; Configurar controlador de interrupciones
 
