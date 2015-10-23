@@ -106,6 +106,8 @@ BITS 32
 
     ; Inicializar el directorio de paginas
 
+
+
     ; Cargar directorio de paginas
 
     ; Habilitar paginacion
