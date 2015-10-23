@@ -21,7 +21,7 @@ Para este item completamos el archivo
 \begin{center}
 
 \minipage{0.6\textwidth}
-  \includegraphics[width=\linewidth]ejercicio1/GDTdatos0.png}
+  \includegraphics[width=\linewidth]{ejercicio1/GDTdatos0.png}
   \caption{{\small Imagen 1}} 
 \endminipage
 \minipage{0.6\textwidth}
