@@ -10,8 +10,10 @@
 /* Atributos paginas */
 /* -------------------------------------------------------------------------- */
 
-
+extern void aux_limpiarPantalla();
+extern void print(const char * text, unsigned int x, unsigned int y, unsigned short attr);
 uint pagLibre = 0x100000;
+
 
 /* Direcciones fisicas de codigos */
 /* -------------------------------------------------------------------------- */
@@ -23,13 +25,17 @@ uint pagLibre = 0x100000;
 /* -------------------------------------------------------------------------- */
 
 void mmu_mapear_pagina(uint virtual, uint cr3, uint fisica, uint attrs){
+
 	
-	uint *pagDir = (uint *) (cr3 & 0xFFFFF000 + ((virtual & 0xFFC00000)*4));
+	uint *pagDir = (uint *) ((cr3 & 0xFFFFF000) + ((virtual & 0xFFC00000)*4));	
 	//uint *pagDir = (uint *) (((cr3 >> 12) + (virtual >> 22))*4);
-	uint *basePag;
+	
+
+	uint *pageTable;
 	if ( *pagDir % 2 == 1){
+		
 		//basePag = (uint *) (*pagDir >> 12);
-		basePag = (uint *) (*pagDir & 0xFFFFF000);
+		pageTable = (uint *) ((*pagDir & 0xFFFFF000) + (virtual & 0x003FF000));
 		uint pageDirAux = *pagDir;
 		pageDirAux = pageDirAux & 0;
 		uint atr_aux = attrs;
@@ -43,29 +49,42 @@ void mmu_mapear_pagina(uint virtual, uint cr3, uint fisica, uint attrs){
 			*pagDir = *pagDir & 011;
 		}
 	} else {
-		basePag = (uint *) mmu_proxima_pagina_fisica_libre();
-		//limpiar (menos el que nosotros queremos crear);
+		
+
+		pageTable = (uint *) mmu_proxima_pagina_fisica_libre();
+		*pagDir = (*pagDir & 0x00000FFF ) | (uint )pageTable;
+		mmu_inicializar_pagina(pageTable);		
 	}
-	uint *pageTable = basePag + ((virtual & 0x003fffff) & 0xFFFFF000);
-	*pageTable = *pageTable & ~*pageTable;
-	*pageTable = *pageTable | attrs;
-	*pageTable = *pageTable | (fisica << 12);
+
+	*pageTable = fisica;
+	*pageTable = (*pageTable & 0xFFFFF000) | attrs;
 
 }
 
 
-void mmu_inicializar(){
-	uint cr3 = 0x27000000;
+uint mmu_inicializar_dir_kernel(){
+	uint cr3 = 0x00027000;
 	uint attrs = 0x003;
-	int i = 0;
+	int i = 0x00000000;
 	while (i<4194304){
 		mmu_mapear_pagina(i,cr3,i,attrs);
 		i+=4096;	
-	}	
+	}
+	aux_limpiarPantalla();
+	return 0; // PREGUNTAR
 }
 
 
 uint mmu_proxima_pagina_fisica_libre(){
 	pagLibre += 4096;
 	return pagLibre-4096;
+}
+
+
+void mmu_inicializar_pagina(uint * pagina){
+	int i = 0;
+	while(i<4096){
+		*pagina = 0x00000000;
+		i++;
+	}
 }

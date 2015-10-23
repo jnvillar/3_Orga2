@@ -12,6 +12,7 @@ extern aux_limpiarPantalla
 extern screen_inicializar
 extern idt_inicializar
 extern game_inicializar
+extern mmu_inicializar_dir_kernel
 
 ;; Saltear seccion de datos
 jmp start
@@ -104,13 +105,24 @@ BITS 32
 
     ; Inicializar el manejador de memoria
 
+
+
     ; Inicializar el directorio de paginas
 
+    call mmu_inicializar_dir_kernel
 
 
     ; Cargar directorio de paginas
 
+    mov eax, 0x27000000
+    mov cr3, eax
+
     ; Habilitar paginacion
+    
+
+    mov eax, cr0
+    or eax, 0x80000000
+    mov cr0, eax
 
     ; Inicializar tss
 
@@ -126,9 +138,9 @@ BITS 32
 
     lidt [IDT_DESC]
 
-    mov eax, 0
-    mov ecx, 1
-    div ecx
+    ;mov eax, 0
+    ;mov ecx, 1
+    ;div ecx
 
     ; Configurar controlador de interrupciones
 
