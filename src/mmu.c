@@ -49,8 +49,6 @@ void mmu_mapear_pagina(uint virtual, uint cr3, uint fisica, uint attrs){
 			*pagDir = *pagDir & 011;
 		}
 	} else {
-		
-
 		pageTable = (uint *) mmu_proxima_pagina_fisica_libre();
 		*pagDir = (*pagDir & 0x00000FFF ) | (uint )pageTable;
 		mmu_inicializar_pagina(pageTable);		
@@ -70,8 +68,8 @@ uint mmu_inicializar_dir_kernel(){
 		mmu_mapear_pagina(i,cr3,i,attrs);
 		i+=4096;	
 	}
-	aux_limpiarPantalla();
-	return 0; // PREGUNTAR
+	aux_limpiarPantalla();	
+	return cr3; // PREGUNTAR
 }
 
 

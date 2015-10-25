@@ -114,7 +114,7 @@ BITS 32
 
     ; Cargar directorio de paginas
 
-    mov eax, 0x27000000
+    mov eax, 0x00027000
     mov cr3, eax
 
     ; Habilitar paginacion
@@ -123,6 +123,8 @@ BITS 32
     mov eax, cr0
     or eax, 0x80000000
     mov cr0, eax
+
+
 
     ; Inicializar tss
 
