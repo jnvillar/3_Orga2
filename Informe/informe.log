@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.22)  23 OCT 2015 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.22)  27 OCT 2015 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -686,7 +686,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1] (./introduccion/main)
+[1] (./introduccion/main.tex)
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
 LaTeX Info: Redefining \. on input line 47.
 LaTeX Info: Redefining \% on input line 47.
 
@@ -696,12 +698,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] (./ejercicio1/main.tex
+[2] (./ejercicio1/ej1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
  []
 
-<ejercicio1/GDTnula.png, id=23, 524.96124pt x 354.32375pt>
+<ejercicio1/GDTnula.png, id=25, 524.96124pt x 354.32375pt>
 File: ejercicio1/GDTnula.png Graphic file (type png)
 
 <use ejercicio1/GDTnula.png>
@@ -723,40 +725,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
  []
 
-<ejercicio1/GDTcodigo0.png, id=31, 533.995pt x 352.31625pt>
+<ejercicio1/GDTcodigo0.png, id=34, 533.995pt x 352.31625pt>
 File: ejercicio1/GDTcodigo0.png Graphic file (type png)
 
 <use ejercicio1/GDTcodigo0.png>
 Package pdftex.def Info: ejercicio1/GDTcodigo0.png used on input line 48.
 (pdftex.def)             Requested size: 212.29312pt x 140.06386pt.
 
-<ejercicio1/GDTdatos0.png, id=32, 537.00626pt x 356.33125pt>
+<ejercicio1/GDTdatos0.png, id=35, 537.00626pt x 356.33125pt>
 File: ejercicio1/GDTdatos0.png Graphic file (type png)
 
 <use ejercicio1/GDTdatos0.png>
 Package pdftex.def Info: ejercicio1/GDTdatos0.png used on input line 52.
 (pdftex.def)             Requested size: 212.29312pt x 140.8662pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--63
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
  []
 
-<ejercicio1/estructuradescriptor.png, id=33, 1352.05125pt x 964.60374pt>
+<ejercicio1/estructuradescriptor.png, id=36, 1352.05125pt x 964.60374pt>
 File: ejercicio1/estructuradescriptor.png Graphic file (type png)
 
 <use ejercicio1/estructuradescriptor.png>
 Package pdftex.def Info: ejercicio1/estructuradescriptor.png used on input line
- 67.
+ 66.
 (pdftex.def)             Requested size: 339.67029pt x 242.32784pt.
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -764,12 +766,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <./ejercicio1/GDTcodigo0.png> <./ejercicio1/GDTdatos0.png>])
-AED: lastpage setting LastPage
-LaTeX Info: Redefining \. on input line 55.
-LaTeX Info: Redefining \% on input line 55.
-LaTeX Info: Redefining \. on input line 55.
-LaTeX Info: Redefining \% on input line 55.
+[4 <./ejercicio1/GDTcodigo0.png> <./ejercicio1/GDTdatos0.png>]
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -777,37 +778,214 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <./ejercicio1/estructuradescriptor.png>] (./informe.aux
+[5 <./ejercicio1/estructuradescriptor.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+<ejercicio1/memvid.png, id=46, 540.0175pt x 407.5225pt>
+File: ejercicio1/memvid.png Graphic file (type png)
+
+<use ejercicio1/memvid.png>
+Package pdftex.def Info: ejercicio1/memvid.png used on input line 140.
+(pdftex.def)             Requested size: 212.29312pt x 160.20166pt.
+LaTeX Info: Redefining \. on input line 145.
+LaTeX Info: Redefining \% on input line 145.
+LaTeX Info: Redefining \. on input line 145.
+LaTeX Info: Redefining \% on input line 145.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+<ejercicio1/esqsupizq.png, id=51, 724.7075pt x 480.79625pt>
+File: ejercicio1/esqsupizq.png Graphic file (type png)
+
+<use ejercicio1/esqsupizq.png>
+Package pdftex.def Info: ejercicio1/esqsupizq.png used on input line 164.
+(pdftex.def)             Requested size: 339.67029pt x 225.35066pt.
+
+<ejercicio1/limpant.png, id=52, 346.29375pt x 284.06125pt>
+File: ejercicio1/limpant.png Graphic file (type png)
+
+<use ejercicio1/limpant.png>
+Package pdftex.def Info: ejercicio1/limpant.png used on input line 177.
+(pdftex.def)             Requested size: 127.37717pt x 104.48552pt.
+LaTeX Info: Redefining \. on input line 181.
+LaTeX Info: Redefining \% on input line 181.
+LaTeX Info: Redefining \. on input line 181.
+LaTeX Info: Redefining \% on input line 181.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7 <./ejercicio1/memvid.png> <./ejercicio1/esqsupizq.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+<ejercicio1/pantgris.png, id=57, 724.7075pt x 480.79625pt>
+File: ejercicio1/pantgris.png Graphic file (type png)
+
+<use ejercicio1/pantgris.png>
+Package pdftex.def Info: ejercicio1/pantgris.png used on input line 188.
+(pdftex.def)             Requested size: 339.67029pt x 225.35066pt.
+
+<ejercicio1/mapa.png, id=58, 744.7825pt x 500.87125pt>
+File: ejercicio1/mapa.png Graphic file (type png)
+
+<use ejercicio1/mapa.png>
+Package pdftex.def Info: ejercicio1/mapa.png used on input line 205.
+(pdftex.def)             Requested size: 339.67029pt x 228.43939pt.
+)
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8 <./ejercicio1/limpant.png> <./ejercicio1/pantgris.png>]
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 <./ejercicio1/mapa.png>] (./ejercicio2/ej2.tex
+<ejercicio2/interrupcion.png, id=67, 521.95pt x 112.42pt>
+File: ejercicio2/interrupcion.png Graphic file (type png)
+
+<use ejercicio2/interrupcion.png>
+Package pdftex.def Info: ejercicio2/interrupcion.png used on input line 20.
+(pdftex.def)             Requested size: 254.75433pt x 54.87013pt.
+
+<ejercicio2/idtentry.png, id=68, 1199.48125pt x 160.6pt>
+File: ejercicio2/idtentry.png Graphic file (type png)
+
+<use ejercicio2/idtentry.png>
+Package pdftex.def Info: ejercicio2/idtentry.png used on input line 31.
+(pdftex.def)             Requested size: 424.58624pt x 56.84798pt.
+
+<ejercicio2/idt.png, id=69, 673.51625pt x 550.055pt>
+File: ejercicio2/idt.png Graphic file (type png)
+ <use ejercicio2/idt.png>
+Package pdftex.def Info: ejercicio2/idt.png used on input line 42.
+(pdftex.def)             Requested size: 254.75433pt x 208.05785pt.
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
+
+[10 <./ejercicio2/interrupcion.png> <./ejercicio2/idtentry.png>]
+<ejercicio2/isrh.png, id=74, 825.0825pt x 622.325pt>
+File: ejercicio2/isrh.png Graphic file (type png)
+ <use ejercicio2/isrh.png>
+Package pdftex.def Info: ejercicio2/isrh.png used on input line 53.
+(pdftex.def)             Requested size: 339.67029pt x 256.19945pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+LaTeX Info: Redefining \. on input line 65.
+LaTeX Info: Redefining \% on input line 65.
+LaTeX Info: Redefining \. on input line 65.
+LaTeX Info: Redefining \% on input line 65.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11 <./ejercicio2/idt.png> <./ejercicio2/isrh.png>]
+<ejercicio2/macro.png, id=78, 659.46375pt x 505.89pt>
+File: ejercicio2/macro.png Graphic file (type png)
+
+<use ejercicio2/macro.png>
+Package pdftex.def Info: ejercicio2/macro.png used on input line 70.
+(pdftex.def)             Requested size: 254.75433pt x 195.42824pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+<ejercicio2/israsm.png, id=79, 420.57124pt x 489.83pt>
+File: ejercicio2/israsm.png Graphic file (type png)
+
+<use ejercicio2/israsm.png>
+Package pdftex.def Info: ejercicio2/israsm.png used on input line 83.
+(pdftex.def)             Requested size: 169.8319pt x 197.79707pt.
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 <./ejercicio2/macro.png>]) AED: lastpage setting LastPage
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13 <./ejercicio2/israsm.png>] (./informe.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) ) 
 Here is how much of TeX's memory you used:
- 6896 strings out of 493109
- 99352 string characters out of 6135009
- 199038 words of memory out of 5000000
- 10230 multiletter control sequences out of 15000+600000
- 8929 words of font info for 34 fonts, out of 8000000 for 9000
+ 6971 strings out of 493109
+ 100881 string characters out of 6135009
+ 200039 words of memory out of 5000000
+ 10286 multiletter control sequences out of 15000+600000
+ 10678 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,11n,43p,622b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe.pdf (6 pages, 749501 bytes).
+ 38i,11n,43p,622b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loc
+al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on informe.pdf (14 pages, 1078405 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 132 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
