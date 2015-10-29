@@ -51,3 +51,9 @@ uint mmu_unmapear_pagina(uint virtual, uint cr3);
 
 
 #endif	/* !__MMU_H__ */
+
+
+
+
+
+

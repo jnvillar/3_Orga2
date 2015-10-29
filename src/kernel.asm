@@ -13,6 +13,8 @@ extern screen_inicializar
 extern idt_inicializar
 extern game_inicializar
 extern mmu_inicializar_dir_kernel
+extern imprimirNombre
+extern mmu_unmapear_pagina
 
 ;; Saltear seccion de datos
 jmp start
@@ -96,7 +98,7 @@ BITS 32
 
     ; Inicializar el juego
 
-    call game_inicializar
+   ; call game_inicializar
 
     ; Inicializar pantalla
 
@@ -124,6 +126,10 @@ BITS 32
     or eax, 0x80000000
     mov cr0, eax
 
+     
+    call imprimirNombre    
+
+    ;xchg bx, bx
 
 
     ; Inicializar tss
@@ -149,6 +155,8 @@ BITS 32
     ; Cargar tarea inicial
 
     ; Habilitar interrupciones
+    xchg bx, bx
+    sti
 
     ; Saltar a la primera tarea: Idle
 

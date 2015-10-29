@@ -284,7 +284,7 @@ void screen_stop_game_show_winner(jugador_t *j) {
 
 
 void aux_limpiarPantalla(){
-    int i = 1;
+    int i = 0;
     while (i<45){
         int j = 0;
         while(j<80){
@@ -295,4 +295,8 @@ void aux_limpiarPantalla(){
         i++;
     }
  
+}
+
+void imprimirNombre(){
+    print("Te voy a dar un byte", 60, 0, 3);
 }
