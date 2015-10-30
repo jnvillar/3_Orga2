@@ -14,6 +14,8 @@ extern void aux_limpiarPantalla();
 extern void print(const char * text, unsigned int x, unsigned int y, unsigned short attr);
 uint pagLibre = 0x100000;
 uint cantPagLibre = 768;
+uint paginaJugadorA;
+uint paginaJugadorB;
 
 /* Direcciones fisicas de codigos */
 /* -------------------------------------------------------------------------- */
@@ -74,6 +76,9 @@ uint mmu_inicializar_dir_kernel(){
 		mmu_mapear_pagina(i*4096,cr3,i*4096,attrs);
 		i++;
 	}
+
+	paginaJugadorA = mmu_proxima_pagina_fisica_libre();
+	paginaJugadorB = mmu_proxima_pagina_fisica_libre();
 	return cr3; 
 
 }
@@ -114,10 +119,59 @@ void mmu_inicializar(){
 
 }
 
-/*
+
 uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_tipo){
-	uint *pagDir = mmu_proxima_pagina_fisica_libre();
-	mmu_inicializar_pagina(pagDir);
+	uint *pagDir = (uint *) mmu_proxima_pagina_fisica_libre(); 	// PIDO UNA PAGINA LIBRE
+	mmu_inicializar_pagina(pagDir); 	// LIMPIO PAGINA
+	int i = 0x00000000;
+	while (i<1024){ 				// HAGO IDENTITY MAPPING
+		mmu_mapear_pagina(i*4096,(uint )pagDir,i*4096,0x007);
+		i++;
+	}
 	
+	uint aCopiar;
+	if (index_jugador == 1){
+		if (perro->tipo == 1){ 			// TAREA A1
+			aCopiar = 0x10000;
+		} else {		 				// TAREA A2
+			aCopiar = 0x11000;
+		}
+		mmu_mapear_pagina(0x400000, (uint) pagDir, paginaJugadorA, 0x007);
+
+	} else{
+		if (perro->tipo == 1){ 			// TAREA B1
+			aCopiar = 0x12000;
+		} else {				 		// TAREA B2
+			aCopiar = 0x13000;
+		}
+		mmu_mapear_pagina(0x400000, (uint) pagDir, paginaJugadorB, 0x007);
+
+	}
+	uint dondeCopiar = 0x500000 + (perro->jugador->x_cucha + perro->jugador->y_cucha*80)*4;
+	
+	int j = 0;
+	while (j<3520){ 				// MAPEO CON EL MAPA
+		mmu_mapear_pagina(0x800000+j*4096,(uint )pagDir,j*4096+0x500000,0x007);
+		j++;
+	}
+
+	mmu_mapear_pagina(0x401000, (uint) pagDir, dondeCopiar, 0x007);
+	mmu_copiar_pagina(aCopiar,0x401000);
+
+
+
+	return (uint ) pagDir;
 }
-*/
+
+
+void mmu_copiar_pagina(uint src, uint dst){
+	uint *sr = (uint *) src;
+	uint *ds = (uint *) dst;
+	int i = 0;
+	while(i<4096){
+		*ds = *sr;
+		ds += 4;
+		sr += 4;
+		i++;
+	}
+}

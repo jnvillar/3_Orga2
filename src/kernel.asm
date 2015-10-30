@@ -15,6 +15,10 @@ extern game_inicializar
 extern mmu_inicializar_dir_kernel
 extern imprimirNombre
 extern mmu_unmapear_pagina
+extern mmu_inicializar_memoria_perro
+
+
+
 
 ;; Saltear seccion de datos
 jmp start
@@ -127,10 +131,12 @@ BITS 32
     mov cr0, eax
 
      
-    call imprimirNombre    
 
-    ;xchg bx, bx
+    call mmu_inicializar_memoria_perro
 
+
+    xchg bx, bx
+    call imprimirNombre
 
     ; Inicializar tss
 
@@ -155,8 +161,8 @@ BITS 32
     ; Cargar tarea inicial
 
     ; Habilitar interrupciones
-    xchg bx, bx
-    sti
+   ; xchg bx, bx
+   ; sti
 
     ; Saltar a la primera tarea: Idle
 
