@@ -16,7 +16,9 @@ extern mmu_inicializar_dir_kernel
 extern imprimirNombre
 extern mmu_unmapear_pagina
 extern mmu_inicializar_memoria_perro
-
+extern deshabilitar_pic
+extern resetear_pic
+extern habilitar_pic
 
 
 
@@ -102,7 +104,7 @@ BITS 32
 
     ; Inicializar el juego
 
-   ; call game_inicializar
+    call game_inicializar
 
     ; Inicializar pantalla
 
@@ -132,10 +134,10 @@ BITS 32
 
      
 
-    call mmu_inicializar_memoria_perro
+    ;call mmu_inicializar_memoria_perro
 
 
-    xchg bx, bx
+    ;xchg bx, bx
     call imprimirNombre
 
     ; Inicializar tss
@@ -161,16 +163,25 @@ BITS 32
     ; Cargar tarea inicial
 
     ; Habilitar interrupciones
-   ; xchg bx, bx
-   ; sti
+  
+  
+   
+   call deshabilitar_pic
+   call resetear_pic
+   call habilitar_pic
+   sti
 
     ; Saltar a la primera tarea: Idle
 
     ; Ciclar infinitamente (por si algo sale mal...)
+
     mov eax, 0xFFFF
     mov ebx, 0xFFFF
     mov ecx, 0xFFFF
     mov edx, 0xFFFF
+    
+    
+
     jmp $
     jmp $
 

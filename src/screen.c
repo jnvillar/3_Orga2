@@ -42,6 +42,62 @@ uchar screen_valor_actual(uint fila, uint columna)
     return p[fila][columna].c;
 }
 
+
+void imprim(char letra){
+
+    if (letra == 0x1E){
+        print("a",0,0,3);
+    }
+    if (letra == 0x1F){
+        print("s",0,0,3);
+    }
+    if (letra == 0x20){
+        print("d",0,0,3);
+    }
+    if (letra == 0x11){
+        print("w",0,0,3);
+    }
+    if (letra == 0x24){
+        print("j",0,0,3);
+    }
+    if (letra == 0x26){
+        print("l",0,0,3);
+    }
+    if (letra == 0x25){
+        print("k",0,0,3);
+    }
+    if (letra == 0x10){
+        print("q",0,0,3);
+    }
+    if (letra == 0x12){
+        print("e",0,0,3);
+    }
+    if (letra == 0x16){
+        print("u",0,0,3);
+    }
+    if (letra == 0x18){
+        print("o",0,0,3);
+    }
+    if (letra == 0x2c){
+        print("z",0,0,3);
+    }
+    if (letra == 0x2d){
+        print("x",0,0,3);
+    }
+    if (letra == 0x2e){
+        print("c",0,0,3);
+    }
+    if (letra == 0x30){
+        print("b",0,0,3);
+    }
+    if (letra == 0x31){
+        print("n",0,0,3);
+    }
+    if (letra == 0x32){
+        print("m",0,0,3);
+    }
+}
+
 void print(const char * text, uint x, uint y, unsigned short attr) {
     int i;
     for (i = 0; text[i] != 0; i++)

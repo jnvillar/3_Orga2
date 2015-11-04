@@ -21,6 +21,9 @@ extern sched_tarea_actual
 extern print
 extern game_atender_tick
 extern fin_intr_pic1
+extern screen_actualizar_reloj_global
+extern imprim
+
 ;;
 ;; Definición de MACROS
 ;; -------------------------------------------------------------------------- ;;
@@ -55,30 +58,20 @@ exception33 db     0
 global _isr%1
 
 _isr%1:
-    push eax
-    mov al, %1
-    cmp al, 0x20
-    jl .internas
-    jge .externas
+    push eax    
+    mov eax, %1
+    push 0xf
+    push 0
+    push 0
+    push exception%1
+    call print
+    add esp, 4
+    add esp, 4
+    add esp, 4
+    add esp, 4
+    jmp $
 
-    .internas:
-        mov eax, %1
-        push 0xf
-        push 0
-        push 0
-        push exception%1
-        call print
-        sub esp, 4
-        sub esp, 4
-        sub esp, 4
-        sub esp, 4
-        jmp $
-
-    .externas:
-        call fin_intr_pic1
-        call game_atender_tick
-        pop eax
-        iret
+        
 
 %endmacro
 
@@ -111,8 +104,6 @@ ISR 16
 ISR 17
 ISR 18
 ISR 19
-ISR 32
-ISR 33
 
 ;;--------------------------------------------------------------------------
 
@@ -121,9 +112,15 @@ ISR 33
 ;; Rutina de atención del RELOJ
 ;; 
 
+global _isr32
+_isr32:
 
-    
-
+    pushad
+    call fin_intr_pic1
+    call game_atender_tick
+    call screen_actualizar_reloj_global
+    popad
+    iret
 
 
 ;;------------------------------------------------------------------------- 
@@ -132,7 +129,17 @@ ISR 33
 ;; Rutina de atención del TECLADO
 ;; 
 
-
+global _isr33
+_isr33:
+    ;xchg bx, bx
+    pushad
+    call fin_intr_pic1
+    in al, 0x60
+    push eax
+    call imprim
+    add esp, 4
+    popad
+    iret
 
  
 
@@ -142,4 +149,11 @@ ISR 33
 ;;
 ;; Rutinas de atención de las SYSCALLS
 ;;----------------------------------------------------------------------- ;;
+
+global _isr70
+_isr70:
+    mov eax, 0x46
+    iret
+
+
 
