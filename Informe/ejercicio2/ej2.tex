@@ -23,7 +23,7 @@ Para esto utilizamos los siguientes archivos dados por la catedra   \textit{idt.
 \end{center}
 \end{figure}
 
-Entonces como 0x8700 representa en binario 1000 0111 0000 0000, tiene el formato que queremos. Ya que P debe ser 1, DPL debe ser 000, luego sigue un 0, luego D (que en este caso es 1 ya que estamos trabajando en 32bits) luego siguen dos unos y por último ocho ceros, lo cual forma el número que queremos. De esta forma nos queda la funcion \textit{IDT\_ENTRY} de la siguiente manera:
+Entonces como 0x8E00 representa en binario 1000 1110 0000 0000, tiene el formato que queremos. Ya que P debe ser 1, DPL debe ser 00, luego sigue un 0, luego D (que en este caso es 1 ya que estamos trabajando en 32bits) luego siguen dos unos y por último nueve ceros, lo cual forma el número que queremos. De esta forma nos queda la funcion \textit{IDT\_ENTRY} de la siguiente manera:
 
  \begin{figure}[H]
 \begin{center}
@@ -93,9 +93,9 @@ Para cargar la \textit{IDT} y probarla, agregamos las siguientes lineas al \text
 
 \begin{center}
     lidt [IDT\_DESC]\\
-    mov eax, 0\\
-    mov ecx, 1\\
-    div ecx$~~~~~$
+    mov eax, 0  $~~~~~~~$  \\
+    mov ecx, 1 $~~~~~~~$    \\
+    div ecx$~~~~~~~~~~~~~$
 \end{center}
 
 Obteniendo el resultado esperado:

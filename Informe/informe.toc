@@ -14,3 +14,12 @@
 \contentsline {subsubsection}{\numberline {2.2.3}{\relax \fontsize {12}{14}\selectfont \textit {Isr.asm:}}}{12}
 \contentsline {subsection}{\numberline {2.3}\IeC {\'I}tem b): Cargar y probar \textit {IDT}}{13}
 \contentsline {section}{\numberline {3}Ejercicio 3:}{14}
+\contentsline {subsection}{\numberline {3.1}Introducci\IeC {\'o}n:}{14}
+\contentsline {subsection}{\numberline {3.2}\IeC {\'I}tem a): Limpiar el buffer de video y pintar el mapa \textit {IDT}}{14}
+\contentsline {subsection}{\numberline {3.3}\IeC {\'I}tem b): Completar la funci\IeC {\'o}n \textit {mmu\_mapear\_p\IeC {\'a}gina(unsigned int virtual, unsigned int cr3, unsigned int f\IeC {\'\i }sica)}}{14}
+\contentsline {subsection}{\numberline {3.4}\IeC {\'I}tem c): Inicializar el directorio de p\IeC {\'a}ginas en 0x00027000 y mapear las direcciones desde la 0 hasta la 0x003FFFFF con Identity Mapping\textit {IDT}}{18}
+\contentsline {subsection}{\numberline {3.5}\IeC {\'I}tem d): Activar la paginaci\IeC {\'o}n y verificar que el sistema sigue funcionando imprimiendo el nombre del grupo.}{18}
+\contentsline {subsection}{\numberline {3.6}\IeC {\'I}tem e): Completar la funci\IeC {\'o}n \textit {mmu\_unmapear\_pagina(unsigned int virtual, unsigned int cr3)}}{19}
+\contentsline {subsection}{\numberline {3.7}\IeC {\'I}tem f): Probar la funci\IeC {\'o}n anterior desmapeando la \IeC {\'u}ltima p\IeC {\'a}gina del kernel (0x3FF000).}{20}
+\contentsline {section}{\numberline {4}Ejercicio 4:}{22}
+\contentsline {subsection}{\numberline {4.1}Introducci\IeC {\'o}n:}{22}
