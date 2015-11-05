@@ -173,6 +173,7 @@ BITS 32
 
     ; Saltar a la primera tarea: Idle
 
+    xchg bx, bx
     ; Ciclar infinitamente (por si algo sale mal...)
 
     mov eax, 0xFFFF
