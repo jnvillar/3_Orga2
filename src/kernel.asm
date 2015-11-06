@@ -174,7 +174,11 @@ BITS 32
     ; Saltar a la primera tarea: Idle
 
     call tss_inicializar
+    
     ;xchg bx, bx
+    jmp 0x70:0
+
+
     ; Ciclar infinitamente (por si algo sale mal...)
 
     mov eax, 0xFFFF

@@ -56,6 +56,6 @@ typedef struct str_tss {
 } __attribute__((__packed__, aligned (8))) tss;
 
 void tss_inicializar();
-void tss_completar(perro_t *perro);
+void tss_completar(int jugador, int perro, perro_t *rrope);
 
 #endif  /* !__TSS_H__ */

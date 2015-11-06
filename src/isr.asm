@@ -151,7 +151,29 @@ _isr33:
 
 global _isr70
 _isr70:
-    mov eax, 0x46
+    pushad
+
+    str ebx
+
+    call fin_intr_pic1
+    cmp eax, 0x1
+    je moverse
+    cmp eax, 0x2
+    je cavar
+    cmp eax, 0x3
+    je olfatear
+    jmp recibirOrden
+
+    moverse:
+
+    cavar:
+
+    olfatear:
+
+    recibirOrden:
+
+
+    popad
     iret
 
 
