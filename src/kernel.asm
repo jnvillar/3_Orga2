@@ -19,7 +19,7 @@ extern mmu_inicializar_memoria_perro
 extern deshabilitar_pic
 extern resetear_pic
 extern habilitar_pic
-
+extern tss_inicializar
 
 
 ;; Saltear seccion de datos
@@ -173,7 +173,8 @@ BITS 32
 
     ; Saltar a la primera tarea: Idle
 
-    xchg bx, bx
+    call tss_inicializar
+    ;xchg bx, bx
     ; Ciclar infinitamente (por si algo sale mal...)
 
     mov eax, 0xFFFF

@@ -137,11 +137,11 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x00,           /* base[31:24]  */
     },
 
-    // TSS DESCRIPTOR IDLE (B = 0, DPL = 0, AVL = 0, G = 0, DIRECCION 0X00016000)
+    // TSS DESCRIPTOR IDLE (B = 0, DPL = 0, AVL = 0, G = 0)
     [GDT_IDX_NULL_DESC+14] = (gdt_entry) {
-        (unsigned short)    0x0067,         /* limit[0:15]  */    //no deberia ser 0100?? PREGUNTAR
-        (unsigned short)    0x6000,         /* base[0:15]   */
-        (unsigned char)     0x01,           /* base[23:16]  */
+        (unsigned short)    0x0067,         /* limit[0:15]  */   
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
         (unsigned char)     0x9,            /* type         */
         (unsigned char)     0x0,            /*              */
         (unsigned char)     0x00,           /* dpl          */
@@ -153,6 +153,8 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x00,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
     },
+
+
 
 };
 
