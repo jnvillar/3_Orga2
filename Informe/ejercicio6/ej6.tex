@@ -1,0 +1,25 @@
+\subsection{Introducción:}
+
+En este ejercicio trabajaremos con todo lo relacionado a la \textit{TSS}, realizaremos los siguientes ítems:
+
+\begin{itemize}
+
+
+
+\item [\textit{a)}]  Definir las entradas en la GDT que considere necesarias para ser usadas como descriptores de \textit{TSS}.
+
+\item [\textit{b)}] Completar la entrada de la \textit{TSS} de la tarea Idle con la información de la tarea Idle. La tarea Idle se encuentra en la dirección 0x00016000. La pila se alojará en la misma dirección que la pila del kernel y debe compartir el mismo CR3 que el kernel.
+
+\item [\textit{c)}]  Construir una función que complete una TSS libre con los datos correspondientes. El código de las tareas se encuentra a partir de la dirección 0x00010000. Para la dirección de la pila se debe utilizar el mismo espacio de la tarea, la misma crecerá desde la base de la tarea. Para el mapa de memoria se debe construir uno nuevo utilizando la función \textit{mmu\_inicializar\_dir\_perro}. Además, tener en cuenta que cada tarea utilizará una pila distinta de nivel 0. 
+
+\item [\textit{d)}] Completar la entrada de la GDT correspondiente a la tarea\_inicial.
+
+\item [\textit{e)}]  Completar la entrada de la GDT correspondiente a la tarea Idle.
+
+\item [\textit{f)}]  Escribir el código necesario para ejecutar la tarea Idle, es decir, saltar intercambiando las TSS, entre la tarea\_inicial y la tarea Idle.
+
+\item [\textit{g)}] Modificar la rutina de la interrupción 0x46, para que implemente los servicios según se indica en la sección 4.4, sin desalojar a la tarea que realiza el syscall.
+
+\item [\textit{h)}]  Ejecutar una tarea perro manualmente. Es decir, crearla y saltar a la entrada en la gdt de su respectiva TSS.
+
+\end{itemize}

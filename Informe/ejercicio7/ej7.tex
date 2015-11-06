@@ -1,0 +1,22 @@
+\subsection{Introducción:}
+
+En este ejercicio realizaremos el \textit{scheduler}.
+
+\begin{itemize}
+
+\item [\textit{a)}]  Construir una función para inicializar las estructuras de datos del \textit{scheduler}.
+
+\item [\textit{b)}] Crear la función  \textit{sched\_proxima\_a\_ejecutar()} que devuelve el  índice de la próxima tarea a ser ejecutada. 
+
+\item [\textit{c)}]  Crear una función \textit{sched\_atender\_tick()} que llame a \textit{game\_atender\_tick()} pasando el número de tarea actual y luego devuelva el índice en la gdt al cual se deberá saltar. Reemplazar el llamado a \textit{game\_atender\_tick} por uno a \textit{sched\_atender\_tick} en el handler de la interrupción de reloj.
+
+\item [\textit{d)}] Modificar la rutina de la interrupción 0x46, para que implemente los servicios según se indica en la sección 4.4.13
+
+\item [\textit{e)}]  Modificar el código necesario para que se realice el intercambio de tareas por cada ciclo de reloj. El intercambio se realizará a según indique la función \textit{sched\_proxima\_a\_ejecutar().}
+
+\item [\textit{f)}]  Modificar las rutinas de excepciones del procesador para que desalojen a la tarea que estaba corriendo y corran la próxima.
+
+\item [\textit{g)}] Implementar el mecanismo de debugging explicado en la sección 4.8 que indicará en pantalla la razón del desalojo de una tarea.
+
+
+\end{itemize}
