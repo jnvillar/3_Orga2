@@ -134,7 +134,7 @@ BITS 32
 
      
 
-    ;call mmu_inicializar_memoria_perro
+    
 
 
     ;xchg bx, bx
@@ -154,13 +154,14 @@ BITS 32
 
     lidt [IDT_DESC]
 
-    ;mov eax, 0
-    ;mov ecx, 1
-    ;div ecx
+    
 
     ; Configurar controlador de interrupciones
 
     ; Cargar tarea inicial
+    
+    mov ax, 0x68
+    ltr ax
 
     ; Habilitar interrupciones
   

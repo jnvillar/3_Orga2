@@ -23,6 +23,10 @@ extern game_atender_tick
 extern fin_intr_pic1
 extern screen_actualizar_reloj_global
 extern imprim
+extern game_perro_actual
+extern game_perro_mover
+extern game_perro_cavar
+extern game_perro_olfatear
 
 ;;
 ;; Definición de MACROS
@@ -153,7 +157,8 @@ global _isr70
 _isr70:
     pushad
 
-    str ebx
+    ;str ebx
+    mov ebx, game_perro_actual
 
     call fin_intr_pic1
     cmp eax, 0x1
@@ -165,16 +170,31 @@ _isr70:
     jmp recibirOrden
 
     moverse:
+        push ecx
+        push ebx
+        call game_perro_mover
+        add esp, 4
+        add esp, 4
+        jmp fin
 
     cavar:
+        push ebx
+        call game_perro_cavar
+        add esp, 4
+        jmp fin
 
     olfatear:
+        push ebx
+        call game_perro_olfatear
+        add esp, 4
+        jmp fin
 
     recibirOrden:
+        jmp fin
 
-
-    popad
-    iret
+    fin:
+        popad
+        iret
 
 
 

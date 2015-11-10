@@ -176,3 +176,18 @@ void mmu_copiar_pagina(uint src, uint dst){
 	}
 }
 
+void mmu_mover_perro(perro_t *perro, int viejo_x, int viejo_y){
+	mmu_copiar_pagina(mmu_xy2fisica(viejo_x,viejo_y),mmu_xy2fisica(perro->x,perro->y));
+	mmu_mapear_pagina(mmu_xy2fisica(perro->x,perro->y), rcr3(), mmu_xy2fisica(perro->x,perro->y),0x007);
+	mmu_mapear_pagina(0x401000, rcr3(), mmu_xy2fisica(perro->x,perro->y),0x007);
+
+}
+
+
+uint mmu_xy2fisica(uint x, uint y){
+	return 0x500000+x*4096+y*4096*80;
+}
+
+uint mmu_xy2virtual(uint x, uint y){
+	return 0x800000+x*4096+y*4096*80;
+}

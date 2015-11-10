@@ -69,6 +69,20 @@ uint game_perro_mover(perro_t *perro, direccion dir)
     int viejo_y = perro->y;
 
     // ~~~ completar ~~~
+
+   	if (game_perro_en_posicion(nuevo_x,nuevo_y) != NULL){
+   		if (game_perro_en_posicion(nuevo_x,nuevo_y)->jugador == perro->jugador){ 		// PARA QUE NO PISE EL PERRO, SI TIENEN EL MISMO DUEÑO
+
+   		} else { 			// QUE PISE EL PERRO SI EL DUEÑO ES DISTINTO
+   			perro->x = nuevo_x;
+   			perro->y = nuevo_y;
+   			mmu_mover_perro(perro, viejo_x, viejo_y);
+   		}
+   	}
+    
+    
+
+    
     return nuevo_x + nuevo_y + viejo_x + viejo_y + res; // uso todas las variables para que no tire warning->error.
 }
 
@@ -76,7 +90,18 @@ uint game_perro_mover(perro_t *perro, direccion dir)
 // *** viene del syscall cavar ***
 uint game_perro_cavar(perro_t *perro)
 {
-	// ~~~ completar ~~~
+	int x = perro->x;
+	int y = perro->y;
+	int i = 0;
+	while (i<ESCONDITES_CANTIDAD){
+		if (escondites[i][0] == x && escondites[i][1] == y){
+			if (escondites[i][2] != 0){
+				perro->huesos++;
+				escondites[i][2]--;
+			}
+		}
+		i++;
+	}	
 	return 0;
 }
 
