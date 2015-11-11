@@ -51,14 +51,14 @@ uint sched_buscar_gdt_tarea(uint perro_t *perro) {
 
 int sched_buscar_tarea_libre()
 {
-	int i = 0;
+	int i = 1;
 	while(i<=MAX_CANT_TAREAS_VIVAS){
 		if(scheduler.tasks[i].perro_t == NULL){
 			return i;			
 		}
 		i++;
 	}
-	return -1;
+	return 0;
 }
 
 
@@ -71,10 +71,9 @@ perro_t* sched_tarea_actual()
 void sched_agregar_tarea(perro_t *perro)
 {
 	int i = sched_buscar_tarea_libre()
-	if(i != -1){
+	if(i != 0){
 		scheduler.tasks[i].perro_t = perro;
-		scheduler.tasks[i].gdt_index = i + 15;
-		
+		scheduler.tasks[i].gdt_index = i + 15;		
 	}
 }
 
