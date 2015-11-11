@@ -21,12 +21,12 @@ void tss_inicializar() {
 	// modificamos aca la gdt 
 	// tarea inicial
 	gdt[12].base_0_15 = (uint )&tss_inicial & 0x0000FFFF;
-	gdt[12].base_23_16 = ((uint )&tss_inicial & 0x00FF0000) >> 4;
-	gdt[12].base_31_24 = ((uint )&tss_inicial & 0xFF000000) >> 6;
+	gdt[12].base_23_16 = ((uint )&tss_inicial & 0x00FF0000) >> 16;
+	gdt[12].base_31_24 = ((uint )&tss_inicial & 0xFF000000) >> 24;
 	// idle
 	gdt[13].base_0_15 = (uint )&tss_idle & 0x0000FFFF;
-	gdt[13].base_23_16 = ((uint )&tss_idle & 0x00FF0000) >> 4;
-	gdt[13].base_31_24 = ((uint )&tss_idle & 0xFF000000) >> 6;
+	gdt[13].base_23_16 = ((uint )&tss_idle & 0x00FF0000) >> 16;
+	gdt[13].base_31_24 = ((uint )&tss_idle & 0xFF000000) >> 24;
 	
 	tss_idle.esp = 0x27000;
 	tss_idle.ebp = 0x27000;
@@ -34,9 +34,14 @@ void tss_inicializar() {
 	tss_idle.eip = 0x16000;	
 	tss_idle.esp0 = 0x27000;
 	tss_idle.ds = 0x48;
+	tss_idle.ss0 = 0x48;
 	tss_idle.ss = 0x48;
+	tss_idle.fs = 0x48;
+	tss_idle.gs = 0x48;
 	tss_idle.es = 0x48;
 	tss_idle.cs = 0x40;
+	tss_idle.eflags = 0x202;
+
 
 	
 }
@@ -68,9 +73,9 @@ void tss_completar(int jugador, int perro, perro_t *rrope){
 		tss_jugadorA[perro].cr3 = nuevoCr3;
 
 
-		gdt[15+perro].base_0_15 = (uint )&tss_jugadorA[perro] & 0x0000FFFF;
-		gdt[15+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 4;
-		gdt[15+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 6;
+		gdt[14+perro].base_0_15 = (uint )&tss_jugadorA[perro] & 0x0000FFFF;
+		gdt[14+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 16;
+		gdt[14+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 24;
 
 	} else {
 		tss_jugadorA[perro].esp0 = espCero;
@@ -97,8 +102,8 @@ void tss_completar(int jugador, int perro, perro_t *rrope){
 		tss_jugadorB[perro].cr3 = nuevoCr3;
 
 
-		gdt[15+perro].base_0_15 = (uint )&tss_jugadorA[perro] & 0x0000FFFF;
-		gdt[15+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 4;
-		gdt[15+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 6;
+		gdt[14+perro].base_0_15 = (uint )&tss_jugadorA[perro] & 0x0000FFFF;
+		gdt[14+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 16;
+		gdt[14+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 24;
 	}
 }
