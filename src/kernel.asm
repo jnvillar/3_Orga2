@@ -20,7 +20,7 @@ extern deshabilitar_pic
 extern resetear_pic
 extern habilitar_pic
 extern tss_inicializar
-
+extern sched_inicializar
 
 ;; Saltear seccion de datos
 jmp start
@@ -94,12 +94,7 @@ BITS 32
     ; Imprimir mensaje de bienvenida
 
 
-    mov ax, 0x60
-    mov fs, ax
-    mov word [fs:0x00], 0x1023
-    mov word [fs:0x02], 0x1024
-    mov word [fs:0x04], 0x1024
-    mov word [fs:0x06], 0x1024
+
 
 
     ; Inicializar el juego
@@ -160,7 +155,7 @@ BITS 32
 
     ; Cargar tarea inicial
     
-    mov ax, 0x68
+    mov ax, 0x60
     ltr ax
 
     ; Habilitar interrupciones
@@ -174,10 +169,13 @@ BITS 32
 
     ; Saltar a la primera tarea: Idle
 
-    call tss_inicializar
+    call tss_inicializar    
+    call sched_inicializar
+    jmp 0x68:0
+
     
-    ;xchg bx, bx
-    jmp 0x70:0
+
+    
 
 
     ; Ciclar infinitamente (por si algo sale mal...)

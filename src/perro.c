@@ -28,7 +28,7 @@ void game_perro_reciclar_y_lanzar(perro_t *perro, uint tipo)
 	perro->tipo = tipo;
 	perro->libre = FALSE;
 	mmu_inicializar_memoria_perro(perro,perro->jugador->index, tipo);
-	sched_agregar_tarea(perro_t *perro);
+	sched_agregar_tarea(perro);
 	screen_actualizar_posicion_mapa(perro->x, perro-> y);
 
 
@@ -43,7 +43,10 @@ void game_perro_reciclar_y_lanzar(perro_t *perro, uint tipo)
 // el perro descargó sus huesos o realizó una acción no válida y caputó, hay que sacarlo del sistema.
 void game_perro_termino(perro_t *perro)
 {	
-	sched_remover_tarea(sched_buscar_gdt_tarea(perro));
+	uint aux = sched_buscar_gdt_tarea(perro);
+	if (aux != 1000){
+		sched_remover_tarea(aux);
+	}
 }
 
 // transforma código de dirección en valores x e y 
@@ -81,7 +84,7 @@ uint game_perro_mover(perro_t *perro, direccion dir)
    			perro->x = nuevo_x;
    			perro->y = nuevo_y;
    			mmu_mover_perro(perro, viejo_x, viejo_y);
-   			screen_actualizar_posicion_mapa(uint x, uint y);
+   			screen_actualizar_posicion_mapa(perro->x, perro->y);
    			if((nuevo_x>79 || nuevo_y>49) || (nuevo_x == perro->jugador->x_cucha && nuevo_y == perro->jugador->y_cucha)){
    				game_perro_termino(perro);
    			}

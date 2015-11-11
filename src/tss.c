@@ -20,13 +20,13 @@ void tss_inicializar() {
 	
 	// modificamos aca la gdt 
 	// tarea inicial
-	gdt[13].base_0_15 = (uint )&tss_inicial & 0x0000FFFF;
-	gdt[13].base_23_16 = ((uint )&tss_inicial & 0x00FF0000) >> 4;
-	gdt[13].base_31_24 = ((uint )&tss_inicial & 0xFF000000) >> 6;
+	gdt[12].base_0_15 = (uint )&tss_inicial & 0x0000FFFF;
+	gdt[12].base_23_16 = ((uint )&tss_inicial & 0x00FF0000) >> 4;
+	gdt[12].base_31_24 = ((uint )&tss_inicial & 0xFF000000) >> 6;
 	// idle
-	gdt[14].base_0_15 = (uint )&tss_idle & 0x0000FFFF;
-	gdt[14].base_23_16 = ((uint )&tss_idle & 0x00FF0000) >> 4;
-	gdt[14].base_31_24 = ((uint )&tss_idle & 0xFF000000) >> 6;
+	gdt[13].base_0_15 = (uint )&tss_idle & 0x0000FFFF;
+	gdt[13].base_23_16 = ((uint )&tss_idle & 0x00FF0000) >> 4;
+	gdt[13].base_31_24 = ((uint )&tss_idle & 0xFF000000) >> 6;
 	
 	tss_idle.esp = 0x27000;
 	tss_idle.ebp = 0x27000;

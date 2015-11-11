@@ -93,14 +93,16 @@ void game_terminar_si_es_hora()
 	int huesos = 0;
 	while(i<ESCONDITES_CANTIDAD){	
 		huesos = huesos + escondites[i][3];	
+		i++;
 	}
 
+
 	if (huesos == 0){
-		int j = 0;
-		while(true){
+		i = 0;
+		while(TRUE){
 			print("Game Over",39,i,3);
 			
-			if(i = 49){
+			if(i == 49){
 				i = 0;
 			}
 			i++;
@@ -108,7 +110,7 @@ void game_terminar_si_es_hora()
 	}
 
 }
-
+/*
 void game_atender_tick(perro_t *perro){
 
 	game_terminar_si_es_hora();
@@ -116,7 +118,7 @@ void game_atender_tick(perro_t *perro){
 
 }
 
-
+*/
 
 
 

@@ -103,25 +103,9 @@ gdt_entry gdt[GDT_COUNT] = {
     }, 
 
 
-    // VIDEO
-    [GDT_IDX_NULL_DESC+12] = (gdt_entry) {
-        (unsigned short)    0x8000,         /* limit[0:15]  */
-        (unsigned short)    0x8000,         /* base[0:15]   */
-        (unsigned char)     0x0B,           /* base[23:16]  */
-        (unsigned char)     0x02,           /* type         */
-        (unsigned char)     0x01,           /* s            */
-        (unsigned char)     0x00,           /* dpl          */
-        (unsigned char)     0x01,           /* p            */
-        (unsigned char)     0x02,           /* limit[16:19] */
-        (unsigned char)     0x00,           /* avl          */
-        (unsigned char)     0x00,           /* l            */
-        (unsigned char)     0x01,           /* db           */
-        (unsigned char)     0x00,           /* g            */
-        (unsigned char)     0x00,           /* base[31:24]  */
-    }, 
 
     // TSS DESCRIPTOR TAREA_INICIAL (B = 0, DPL = 0, AVL = 0, G = 0)
-    [GDT_IDX_NULL_DESC+13] = (gdt_entry) {
+    [GDT_IDX_NULL_DESC+12] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -138,7 +122,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR IDLE (B = 0, DPL = 0, AVL = 0, G = 0)
-    [GDT_IDX_NULL_DESC+14] = (gdt_entry) {
+    [GDT_IDX_NULL_DESC+13] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -155,7 +139,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO A 8 (B = 0, DPL = 0, AVL = 0, G = 0)
-    [GDT_IDX_NULL_DESC+15] = (gdt_entry) {
+    [GDT_IDX_NULL_DESC+14] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -172,7 +156,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO A 7
-     [GDT_IDX_NULL_DESC + 16] = (gdt_entry) { 
+     [GDT_IDX_NULL_DESC + 15] = (gdt_entry) { 
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -189,7 +173,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO A 6
-    [GDT_IDX_NULL_DESC + 17] = (gdt_entry) { 
+    [GDT_IDX_NULL_DESC + 16] = (gdt_entry) { 
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -206,7 +190,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO A 5
-        [GDT_IDX_NULL_DESC + 18] = (gdt_entry) { 
+        [GDT_IDX_NULL_DESC + 17] = (gdt_entry) { 
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -223,7 +207,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
      // TSS DESCRIPTOR PERRO A 4
-        [GDT_IDX_NULL_DESC + 19] = (gdt_entry) {
+        [GDT_IDX_NULL_DESC + 18] = (gdt_entry) {
         (unsigned short)    0x0000,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -240,7 +224,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO A 3
-        [GDT_IDX_NULL_DESC + 20] = (gdt_entry) {
+        [GDT_IDX_NULL_DESC + 19] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -257,7 +241,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO A 2
-        [GDT_IDX_NULL_DESC + 21] = (gdt_entry) {
+        [GDT_IDX_NULL_DESC + 20] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -274,7 +258,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO A 1
-        [GDT_IDX_NULL_DESC + 22] = (gdt_entry) {
+        [GDT_IDX_NULL_DESC + 21] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -291,7 +275,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO B 8
-        [GDT_IDX_NULL_DESC + 23] = (gdt_entry) {
+        [GDT_IDX_NULL_DESC + 22] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -308,7 +292,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO B 7
-        [GDT_IDX_NULL_DESC + 24] = (gdt_entry) {
+        [GDT_IDX_NULL_DESC + 23] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
@@ -325,6 +309,23 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
     // TSS DESCRIPTOR PERRO B 6    
+        [GDT_IDX_NULL_DESC + 24] = (gdt_entry) {
+        (unsigned short)    0x0067,         /* limit[0:15]  */   
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x9,            /* type         */
+        (unsigned char)     0x0,            /*              */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x00,           /* limit[16:19] */
+        (unsigned char)     0x00,           /* avl          */
+        (unsigned char)     0x0,            /*              */
+        (unsigned char)     0x0,            /*              */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+
+    // TSS DESCRIPTOR PERRO B 5   
         [GDT_IDX_NULL_DESC + 25] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
@@ -340,6 +341,8 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x00,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
     },
+
+    // TSS DESCRIPTOR PERRO B 4  
         [GDT_IDX_NULL_DESC + 26] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
@@ -355,6 +358,8 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x00,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
     },
+
+    // TSS DESCRIPTOR PERRO B 3
         [GDT_IDX_NULL_DESC + 27] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
@@ -370,6 +375,8 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x00,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
     },
+
+    // TSS DESCRIPTOR PERRO B 2
         [GDT_IDX_NULL_DESC + 28] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
@@ -385,6 +392,8 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x00,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
     },
+
+    // TSS DESCRIPTOR PERRO B 1  
         [GDT_IDX_NULL_DESC + 29] = (gdt_entry) {
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
@@ -400,36 +409,7 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x00,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
     },
-        [GDT_IDX_NULL_DESC + 30] = (gdt_entry) {
-        (unsigned short)    0x0067,         /* limit[0:15]  */   
-        (unsigned short)    0x0000,         /* base[0:15]   */
-        (unsigned char)     0x00,           /* base[23:16]  */
-        (unsigned char)     0x9,            /* type         */
-        (unsigned char)     0x0,            /*              */
-        (unsigned char)     0x00,           /* dpl          */
-        (unsigned char)     0x01,           /* p            */
-        (unsigned char)     0x00,           /* limit[16:19] */
-        (unsigned char)     0x00,           /* avl          */
-        (unsigned char)     0x0,            /*              */
-        (unsigned char)     0x0,            /*              */
-        (unsigned char)     0x00,           /* g            */
-        (unsigned char)     0x00,           /* base[31:24]  */
-    },
-        [GDT_IDX_NULL_DESC + 31] = (gdt_entry) {
-        (unsigned short)    0x0067,         /* limit[0:15]  */   
-        (unsigned short)    0x0000,         /* base[0:15]   */
-        (unsigned char)     0x00,           /* base[23:16]  */
-        (unsigned char)     0x9,            /* type         */
-        (unsigned char)     0x0,            /*              */
-        (unsigned char)     0x00,           /* dpl          */
-        (unsigned char)     0x01,           /* p            */
-        (unsigned char)     0x00,           /* limit[16:19] */
-        (unsigned char)     0x00,           /* avl          */
-        (unsigned char)     0x0,            /*              */
-        (unsigned char)     0x0,            /*              */
-        (unsigned char)     0x00,           /* g            */
-        (unsigned char)     0x00,           /* base[31:24]  */
-    },
+    
 
 };
 

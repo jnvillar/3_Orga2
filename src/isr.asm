@@ -27,13 +27,16 @@ extern game_perro_actual
 extern game_perro_mover
 extern game_perro_cavar
 extern game_perro_olfatear
-extern game_atender_tick()
-extern sched_atender_tick()
+extern game_atender_tick
+extern sched_atender_tick
 
 ;;
 ;; Definición de MACROS
 ;; -------------------------------------------------------------------------- ;;
- 
+
+selector: dw 0
+offset: dd 0
+
 exception0 db     'Divide Error', 0
 exception1 db     'RESERVED', 0
 exception2 db     'N MI Interrupt', 0
@@ -130,11 +133,14 @@ _isr32:
 
     str cx
     cmp ax,cx
-    je.fin
-    jmp ax:0
+    je .fin
+
+    mov [selector], ax
+
+    jmp selector:offset
 
     .fin:
-    call screen_actualizar_reloj_global
+        call screen_actualizar_reloj_global
     
     pop eax
     popad
