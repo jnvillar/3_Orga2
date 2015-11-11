@@ -74,8 +74,8 @@ void tss_completar(int jugador, int perro, perro_t *rrope){
 
 
 		gdt[14+perro].base_0_15 = (uint )&tss_jugadorA[perro] & 0x0000FFFF;
-		gdt[14+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 4;
-		gdt[14+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 6;
+		gdt[14+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 16;
+		gdt[14+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 24;
 
 	} else {
 		tss_jugadorA[perro].esp0 = espCero;
@@ -103,7 +103,7 @@ void tss_completar(int jugador, int perro, perro_t *rrope){
 
 
 		gdt[14+perro].base_0_15 = (uint )&tss_jugadorA[perro] & 0x0000FFFF;
-		gdt[14+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 4;
-		gdt[14+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 6;
+		gdt[14+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 16;
+		gdt[14+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 24;
 	}
 }
