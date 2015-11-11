@@ -23,3 +23,15 @@
 \contentsline {subsection}{\numberline {3.7}\IeC {\'I}tem f): Probar la funci\IeC {\'o}n anterior desmapeando la \IeC {\'u}ltima p\IeC {\'a}gina del kernel (0x3FF000).}{20}
 \contentsline {section}{\numberline {4}Ejercicio 4:}{22}
 \contentsline {subsection}{\numberline {4.1}Introducci\IeC {\'o}n:}{22}
+\contentsline {subsection}{\numberline {4.2}\IeC {\'I}tem a): Completar \textit {inicializar\_mmu}.}{22}
+\contentsline {subsection}{\numberline {4.3}\IeC {\'I}tem b): Completar la funci\IeC {\'o}n \textit {mmu\_inicializar\_memoria\_perro}.}{22}
+\contentsline {section}{\numberline {5}Ejercicio 5:}{24}
+\contentsline {subsection}{\numberline {5.1}Introducci\IeC {\'o}n:}{24}
+\contentsline {subsection}{\numberline {5.2}\IeC {\'I}tem a): Completar la \textit {IDT}}{24}
+\contentsline {subsection}{\numberline {5.3}\IeC {\'I}tem b): Rutina del reloj}{24}
+\contentsline {subsection}{\numberline {5.4}\IeC {\'I}tem c): Rutina del teclado}{25}
+\contentsline {subsection}{\numberline {5.5}\IeC {\'I}tem d): Rutina 0x46}{25}
+\contentsline {section}{\numberline {6}Ejercicio 6:}{26}
+\contentsline {subsection}{\numberline {6.1}Introducci\IeC {\'o}n:}{26}
+\contentsline {section}{\numberline {7}Ejercicio 7:}{27}
+\contentsline {subsection}{\numberline {7.1}Introducci\IeC {\'o}n:}{27}

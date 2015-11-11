@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.22)  4 NOV 2015 16:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.22)  6 NOV 2015 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -550,10 +550,7 @@ Package: enumerate 2014/10/28 v3.00 enumerate extensions (DPC)
 \WF@everypar=\toks33
 Package: wrapfig 2003/01/31  v 3.6
 )
-(./informe.aux
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
-)
+No file informe.aux.
 \openout1 = `informe.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -570,7 +567,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
-
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count124
@@ -668,16 +664,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--39
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Sty/l
-ogo_dc.jpg> <./Sty/logo_uba.jpg>] (./informe.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-
-Overfull \hbox (6.97359pt too wide) in paragraph at lines 23--23
- [][] [][]\OT1/cmr/m/n/10 Item f): Pro-bar la fun-ci^^Son an-te-rior des-ma-pea
-n-do la ^^Sulti-ma p^^Sagi-na del ker-nel (0x3FF000). []  
- []
-
-)
+ogo_dc.jpg> <./Sty/logo_uba.jpg>]
+No file informe.toc.
 \tf@toc=\write3
 \openout3 = `informe.toc'.
 
@@ -686,11 +674,13 @@ LaTeX Info: Redefining \% on input line 43.
 LaTeX Info: Redefining \. on input line 43.
 LaTeX Info: Redefining \% on input line 43.
 
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.07225pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
+
+
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 43.
 
 [1] (./introduccion/main.tex)
 LaTeX Info: Redefining \. on input line 47.
@@ -704,12 +694,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 47.
+
 [2] (./ejercicio1/ej1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
  []
 
-<ejercicio1/GDTnula.png, id=25, 524.96124pt x 354.32375pt>
+<ejercicio1/GDTnula.png, id=23, 524.96124pt x 354.32375pt>
 File: ejercicio1/GDTnula.png Graphic file (type png)
 
 <use ejercicio1/GDTnula.png>
@@ -726,19 +719,23 @@ Package pdftex.def Info: ejercicio1/GDTnula.png used on input line 36.
 (pdftex.def)             Requested size: 233.52373pt x 157.61679pt.
 LaTeX Info: Redefining \. on input line 41.
 LaTeX Info: Redefining \% on input line 41.
- [3 <./ejercicio1/GDTnula.png>]
+
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 41.
+
+[3 <./ejercicio1/GDTnula.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
  []
 
-<ejercicio1/GDTcodigo0.png, id=34, 533.995pt x 352.31625pt>
+<ejercicio1/GDTcodigo0.png, id=33, 533.995pt x 352.31625pt>
 File: ejercicio1/GDTcodigo0.png Graphic file (type png)
 
 <use ejercicio1/GDTcodigo0.png>
 Package pdftex.def Info: ejercicio1/GDTcodigo0.png used on input line 48.
 (pdftex.def)             Requested size: 212.29312pt x 140.06386pt.
 
-<ejercicio1/GDTdatos0.png, id=35, 537.00626pt x 356.33125pt>
+<ejercicio1/GDTdatos0.png, id=34, 537.00626pt x 356.33125pt>
 File: ejercicio1/GDTdatos0.png Graphic file (type png)
 
 <use ejercicio1/GDTdatos0.png>
@@ -754,7 +751,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
  []
 
-<ejercicio1/estructuradescriptor.png, id=36, 1352.05125pt x 964.60374pt>
+<ejercicio1/estructuradescriptor.png, id=35, 1352.05125pt x 964.60374pt>
 File: ejercicio1/estructuradescriptor.png Graphic file (type png)
 
 <use ejercicio1/estructuradescriptor.png>
@@ -772,6 +769,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 71.
+
 [4 <./ejercicio1/GDTcodigo0.png> <./ejercicio1/GDTdatos0.png>]
 LaTeX Info: Redefining \. on input line 92.
 LaTeX Info: Redefining \% on input line 92.
@@ -784,8 +784,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 92.
+
 [5 <./ejercicio1/estructuradescriptor.png>]
-<ejercicio1/memvid.png, id=46, 540.0175pt x 407.5225pt>
+<ejercicio1/memvid.png, id=45, 540.0175pt x 407.5225pt>
 File: ejercicio1/memvid.png Graphic file (type png)
 
 <use ejercicio1/memvid.png>
@@ -802,19 +805,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 145.
+
 [6]
 Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
-<ejercicio1/esqsupizq.png, id=51, 724.7075pt x 480.79625pt>
+<ejercicio1/esqsupizq.png, id=50, 724.7075pt x 480.79625pt>
 File: ejercicio1/esqsupizq.png Graphic file (type png)
 
 <use ejercicio1/esqsupizq.png>
 Package pdftex.def Info: ejercicio1/esqsupizq.png used on input line 164.
 (pdftex.def)             Requested size: 339.67029pt x 225.35066pt.
 
-<ejercicio1/limpant.png, id=52, 346.29375pt x 284.06125pt>
+<ejercicio1/limpant.png, id=51, 346.29375pt x 284.06125pt>
 File: ejercicio1/limpant.png Graphic file (type png)
 
 <use ejercicio1/limpant.png>
@@ -831,19 +837,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 181.
+
 [7 <./ejercicio1/memvid.png> <./ejercicio1/esqsupizq.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
-<ejercicio1/pantgris.png, id=57, 724.7075pt x 480.79625pt>
+<ejercicio1/pantgris.png, id=56, 724.7075pt x 480.79625pt>
 File: ejercicio1/pantgris.png Graphic file (type png)
 
 <use ejercicio1/pantgris.png>
 Package pdftex.def Info: ejercicio1/pantgris.png used on input line 188.
 (pdftex.def)             Requested size: 339.67029pt x 225.35066pt.
 
-<ejercicio1/mapa.png, id=58, 744.7825pt x 500.87125pt>
+<ejercicio1/mapa.png, id=57, 744.7825pt x 500.87125pt>
 File: ejercicio1/mapa.png Graphic file (type png)
 
 <use ejercicio1/mapa.png>
@@ -861,6 +870,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 50.
+
 [8 <./ejercicio1/limpant.png> <./ejercicio1/pantgris.png>]
 LaTeX Info: Redefining \. on input line 51.
 LaTeX Info: Redefining \% on input line 51.
@@ -873,22 +885,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 51.
+
 [9 <./ejercicio1/mapa.png>] (./ejercicio2/ej2.tex
-<ejercicio2/interrupcion.png, id=67, 521.95pt x 112.42pt>
+<ejercicio2/interrupcion.png, id=66, 521.95pt x 112.42pt>
 File: ejercicio2/interrupcion.png Graphic file (type png)
 
 <use ejercicio2/interrupcion.png>
 Package pdftex.def Info: ejercicio2/interrupcion.png used on input line 20.
 (pdftex.def)             Requested size: 254.75433pt x 54.87013pt.
 
-<ejercicio2/idtentry.png, id=68, 1194.4625pt x 152.57pt>
+<ejercicio2/idtentry.png, id=67, 1194.4625pt x 152.57pt>
 File: ejercicio2/idtentry.png Graphic file (type png)
 
 <use ejercicio2/idtentry.png>
 Package pdftex.def Info: ejercicio2/idtentry.png used on input line 31.
 (pdftex.def)             Requested size: 424.58624pt x 54.23373pt.
 
-<ejercicio2/idt.png, id=69, 673.51625pt x 550.055pt>
+<ejercicio2/idt.png, id=68, 673.51625pt x 550.055pt>
 File: ejercicio2/idt.png Graphic file (type png)
  <use ejercicio2/idt.png>
 Package pdftex.def Info: ejercicio2/idt.png used on input line 42.
@@ -896,8 +911,11 @@ Package pdftex.def Info: ejercicio2/idt.png used on input line 42.
 LaTeX Info: Redefining \. on input line 47.
 LaTeX Info: Redefining \% on input line 47.
 
+
+LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 47.
+
 [10 <./ejercicio2/interrupcion.png> <./ejercicio2/idtentry.png>]
-<ejercicio2/isrh.png, id=75, 825.0825pt x 622.325pt>
+<ejercicio2/isrh.png, id=74, 825.0825pt x 622.325pt>
 File: ejercicio2/isrh.png Graphic file (type png)
  <use ejercicio2/isrh.png>
 Package pdftex.def Info: ejercicio2/isrh.png used on input line 53.
@@ -917,8 +935,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 65.
+
 [11 <./ejercicio2/idt.png> <./ejercicio2/isrh.png>]
-<ejercicio2/macro.png, id=79, 659.46375pt x 505.89pt>
+<ejercicio2/macro.png, id=78, 659.46375pt x 505.89pt>
 File: ejercicio2/macro.png Graphic file (type png)
 
 <use ejercicio2/macro.png>
@@ -929,7 +950,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
-<ejercicio2/israsm.png, id=80, 420.57124pt x 489.83pt>
+<ejercicio2/israsm.png, id=79, 420.57124pt x 489.83pt>
 File: ejercicio2/israsm.png Graphic file (type png)
 
 <use ejercicio2/israsm.png>
@@ -946,8 +967,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 88.
+
 [12 <./ejercicio2/macro.png>]
-<ejercicio2/division.jpg, id=86, 744.7825pt x 500.87125pt>
+<ejercicio2/division.jpg, id=85, 744.7825pt x 500.87125pt>
 File: ejercicio2/division.jpg Graphic file (type jpg)
 
 <use ejercicio2/division.jpg>
@@ -965,13 +989,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 55.
+
 [13 <./ejercicio2/israsm.png> <./ejercicio2/division.jpg>]
 (./ejercicio3/ej3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-<ejercicio3/mappag.png, id=90, 1232.605pt x 919.435pt>
+<ejercicio3/mappag.png, id=89, 1232.605pt x 919.435pt>
 File: ejercicio3/mappag.png Graphic file (type png)
 
 <use ejercicio3/mappag.png>
@@ -979,10 +1006,14 @@ Package pdftex.def Info: ejercicio3/mappag.png used on input line 24.
 (pdftex.def)             Requested size: 424.58624pt x 316.70036pt.
 LaTeX Info: Redefining \. on input line 29.
 LaTeX Info: Redefining \% on input line 29.
- [14]
-<ejercicio3/cr3.png, id=94, 1220.56pt x 581.17125pt>
+
+
+LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 29.
+
+[14] <ejercicio3/cr3.png, id=93, 1220.56pt x 581.17125pt>
 File: ejercicio3/cr3.png Graphic file (type png)
- <use ejercicio3/cr3.png>
+
+<use ejercicio3/cr3.png>
 Package pdftex.def Info: ejercicio3/cr3.png used on input line 40.
 (pdftex.def)             Requested size: 254.75433pt x 121.29578pt.
 
@@ -1000,14 +1031,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 47.
+
 [15 <./ejercicio3/mappag.png> <./ejercicio3/cr3.png>]
-<ejercicio3/fun1.png, id=100, 692.5875pt x 20.075pt>
+<ejercicio3/fun1.png, id=99, 692.5875pt x 20.075pt>
 File: ejercicio3/fun1.png Graphic file (type png)
  <use ejercicio3/fun1.png>
 Package pdftex.def Info: ejercicio3/fun1.png used on input line 53.
 (pdftex.def)             Requested size: 339.67029pt x 9.8457pt.
 
-<ejercicio3/fun2.png, id=101, 904.37875pt x 650.43pt>
+<ejercicio3/fun2.png, id=100, 904.37875pt x 650.43pt>
 File: ejercicio3/fun2.png Graphic file (type png)
 
 <use ejercicio3/fun2.png>
@@ -1028,7 +1062,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
-<ejercicio3/fun3.png, id=102, 514.92375pt x 317.185pt>
+<ejercicio3/fun3.png, id=101, 514.92375pt x 317.185pt>
 File: ejercicio3/fun3.png Graphic file (type png)
 
 <use ejercicio3/fun3.png>
@@ -1045,26 +1079,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 86.
+
 [16 <./ejercicio3/fun1.png> <./ejercicio3/fun2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
-<ejercicio3/proxpaglibre.png, id=109, 479.7925pt x 134.5025pt>
+<ejercicio3/proxpaglibre.png, id=108, 479.7925pt x 134.5025pt>
 File: ejercicio3/proxpaglibre.png Graphic file (type png)
 
 <use ejercicio3/proxpaglibre.png>
 Package pdftex.def Info: ejercicio3/proxpaglibre.png used on input line 93.
 (pdftex.def)             Requested size: 212.29312pt x 59.51375pt.
 
-<ejercicio3/inicializarpag.png, id=110, 467.7475pt x 201.75375pt>
+<ejercicio3/inicializarpag.png, id=109, 467.7475pt x 201.75375pt>
 File: ejercicio3/inicializarpag.png Graphic file (type png)
 
 <use ejercicio3/inicializarpag.png>
 Package pdftex.def Info: ejercicio3/inicializarpag.png used on input line 104.
 (pdftex.def)             Requested size: 212.29312pt x 91.57028pt.
 
-<ejercicio3/fun4.png, id=111, 646.415pt x 68.255pt>
+<ejercicio3/fun4.png, id=110, 646.415pt x 68.255pt>
 File: ejercicio3/fun4.png Graphic file (type png)
  <use ejercicio3/fun4.png>
 Package pdftex.def Info: ejercicio3/fun4.png used on input line 117.
@@ -1080,8 +1117,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 122.
+
 [17 <./ejercicio3/fun3.png> <./ejercicio3/proxpaglibre.png> <./ejercicio3/inici
-alizarpag.png>] <ejercicio3/inikernel.png, id=116, 686.565pt x 403.5075pt>
+alizarpag.png>] <ejercicio3/inikernel.png, id=115, 686.565pt x 403.5075pt>
 File: ejercicio3/inikernel.png Graphic file (type png)
 
 <use ejercicio3/inikernel.png>
@@ -1107,15 +1147,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 153.
+
 [18 <./ejercicio3/fun4.png> <./ejercicio3/inikernel.png>]
-<ejercicio3/nombre.png, id=123, 724.7075pt x 480.79625pt>
+<ejercicio3/nombre.png, id=122, 724.7075pt x 480.79625pt>
 File: ejercicio3/nombre.png Graphic file (type png)
 
 <use ejercicio3/nombre.png>
 Package pdftex.def Info: ejercicio3/nombre.png used on input line 178.
 (pdftex.def)             Requested size: 382.12502pt x 253.51492pt.
 
-<ejercicio3/unmap.png, id=124, 1022.82124pt x 288.07625pt>
+<ejercicio3/unmap.png, id=123, 1022.82124pt x 288.07625pt>
 File: ejercicio3/unmap.png Graphic file (type png)
 
 <use ejercicio3/unmap.png>
@@ -1132,8 +1175,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 196.
+
 [19 <./ejercicio3/nombre.png>]
-<ejercicio3/unmaproof.png, id=129, 726.715pt x 487.8225pt>
+<ejercicio3/unmaproof.png, id=128, 726.715pt x 487.8225pt>
 File: ejercicio3/unmaproof.png Graphic file (type png)
 
 <use ejercicio3/unmaproof.png>
@@ -1150,6 +1196,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+
+LaTeX Warning: Reference `LastPage' on page 20 undefined on input line 235.
+
 [20 <./ejercicio3/unmap.png>])
 LaTeX Info: Redefining \. on input line 59.
 LaTeX Info: Redefining \% on input line 59.
@@ -1162,42 +1211,171 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21 <./ejercicio3/unmaproof.png>] (./ejercicio4/ej4.tex)
-AED: lastpage setting LastPage
-LaTeX Info: Redefining \. on input line 68.
-LaTeX Info: Redefining \% on input line 68.
- [22] (./informe.aux
+
+LaTeX Warning: Reference `LastPage' on page 21 undefined on input line 59.
+
+[21 <./ejercicio3/unmaproof.png>] (./ejercicio4/ej4.tex
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+<ejercicio4/funprin.png, id=136, 1155.31625pt x 864.22874pt>
+File: ejercicio4/funprin.png Graphic file (type png)
+
+<use ejercicio4/funprin.png>
+Package pdftex.def Info: ejercicio4/funprin.png used on input line 29.
+(pdftex.def)             Requested size: 445.81685pt x 333.48735pt.
+
+Overfull \hbox (21.2306pt too wide) in paragraph at lines 28--32
+ []$ 
+ []
+
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+
+LaTeX Warning: Reference `LastPage' on page 22 undefined on input line 40.
+
+[22 <./ejercicio4/funprin.png>]
+Overfull \hbox (107.96242pt too wide) in paragraph at lines 42--43
+[]\OT1/cmr/m/n/10 Comienza pi-dien-do un lu-gar pa-ra crear una p^^Sagi-na li-b
+re, pa-ra eso lla-ma a la fun-ci^^Son \OT1/cmr/m/it/10 mmu[]proxima[]pagina[]fi
+sica[]libre()\OT1/cmr/m/n/10 .
+ []
+
+<ejercicio4/fun1.png, id=141, 737.75626pt x 175.65625pt>
+File: ejercicio4/fun1.png Graphic file (type png)
+
+<use ejercicio4/fun1.png>
+Package pdftex.def Info: ejercicio4/fun1.png used on input line 47.
+(pdftex.def)             Requested size: 275.97845pt x 65.70743pt.
+ <ejercicio4/fun2.png, id=142, 788.9475pt x 417.56pt>
+File: ejercicio4/fun2.png Graphic file (type png)
+
+<use ejercicio4/fun2.png>
+Package pdftex.def Info: ejercicio4/fun2.png used on input line 58.
+(pdftex.def)             Requested size: 297.20906pt x 157.2982pt.
+)
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+
+LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 63.
+
+[23 <./ejercicio4/fun1.png> <./ejercicio4/fun2.png>] (./ejercicio5/ej5.tex
+<ejercicio5/idt.png, id=147, 196.735pt x 59.22125pt>
+File: ejercicio5/idt.png Graphic file (type png)
+ <use ejercicio5/idt.png>
+Package pdftex.def Info: ejercicio5/idt.png used on input line 22.
+(pdftex.def)             Requested size: 106.14656pt x 31.95187pt.
+
+<ejercicio5/isr.png, id=148, 167.62625pt x 58.2175pt>
+File: ejercicio5/isr.png Graphic file (type png)
+ <use ejercicio5/isr.png>
+Package pdftex.def Info: ejercicio5/isr.png used on input line 32.
+(pdftex.def)             Requested size: 106.14656pt x 36.86464pt.
+
+<ejercicio5/rutinaReloj.png, id=149, 403.5075pt x 237.88875pt>
+File: ejercicio5/rutinaReloj.png Graphic file (type png)
+
+<use ejercicio5/rutinaReloj.png>
+Package pdftex.def Info: ejercicio5/rutinaReloj.png used on input line 43.
+(pdftex.def)             Requested size: 212.29312pt x 125.15843pt.
+LaTeX Info: Redefining \. on input line 49.
+LaTeX Info: Redefining \% on input line 49.
+
+
+LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 49.
+
+[24 <./ejercicio5/idt.png> <./ejercicio5/isr.png> <./ejercicio5/rutinaReloj.png
+>] <ejercicio5/rutinaTeclado.png, id=156, 227.85126pt x 249.93375pt>
+File: ejercicio5/rutinaTeclado.png Graphic file (type png)
+
+<use ejercicio5/rutinaTeclado.png>
+Package pdftex.def Info: ejercicio5/rutinaTeclado.png used on input line 57.
+(pdftex.def)             Requested size: 148.60777pt x 163.0118pt.
+
+<ejercicio5/rutina0x46.png, id=157, 197.73875pt x 120.45pt>
+File: ejercicio5/rutina0x46.png Graphic file (type png)
+
+<use ejercicio5/rutina0x46.png>
+Package pdftex.def Info: ejercicio5/rutina0x46.png used on input line 73.
+(pdftex.def)             Requested size: 127.37717pt x 77.59131pt.
+)
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.07225pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+
+LaTeX Warning: Reference `LastPage' on page 25 undefined on input line 67.
+
+[25 <./ejercicio5/rutinaTeclado.png> <./ejercicio5/rutina0x46.png>]
+(./ejercicio6/ej6.tex)
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+
+
+LaTeX Warning: Reference `LastPage' on page 26 undefined on input line 71.
+
+[26] (./ejercicio7/ej7.tex) AED: lastpage setting LastPage
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
+
+
+LaTeX Warning: Reference `LastPage' on page 27 undefined on input line 79.
+
+[27] (./informe.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-) ) 
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 7037 strings out of 493109
- 102411 string characters out of 6135009
- 201039 words of memory out of 5000000
- 10331 multiletter control sequences out of 15000+600000
- 10678 words of font info for 39 fonts, out of 8000000 for 9000
+ 7081 strings out of 493109
+ 103434 string characters out of 6135009
+ 201031 words of memory out of 5000000
+ 10363 multiletter control sequences out of 15000+600000
+ 10331 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,12n,43p,735b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf
-b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pf
-b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/t
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/tex
 live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe.pdf (23 pages, 1898767 bytes).
+Output written on informe.pdf (28 pages, 2112192 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
+ 216 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 

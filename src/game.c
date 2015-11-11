@@ -89,6 +89,31 @@ perro_t* game_perro_en_posicion(uint x, uint y)
 // termina si se agotaron los huesos o si hace tiempo que no hay ningun cambio
 void game_terminar_si_es_hora()
 {
+	int i = 0;
+	int huesos = 0;
+	while(i<ESCONDITES_CANTIDAD){	
+		huesos = huesos + escondites[i][3];	
+	}
+
+	if (huesos == 0){
+		int j = 0;
+		while(true){
+			print("Game Over",39,i,3);
+			
+			if(i = 49){
+				i = 0;
+			}
+			i++;
+		}
+	}
+
+}
+
+void game_atender_tick(perro_t *perro){
+
+	game_terminar_si_es_hora();
+	
+
 }
 
 

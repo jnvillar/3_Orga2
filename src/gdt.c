@@ -171,6 +171,247 @@ gdt_entry gdt[GDT_COUNT] = {
         (unsigned char)     0x00,           /* base[31:24]  */
     },
 
+     [GDT_IDX_NULL_DESC + 16] = (gdt_entry) { //perro 1-0
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+    [GDT_IDX_NULL_DESC + 17] = (gdt_entry) { //perro 1-1
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 18] = (gdt_entry) { //perro 1-2
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 19] = (gdt_entry) { //perro 1-3
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 20] = (gdt_entry) { //perro 1-4
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 21] = (gdt_entry) { //perro 1-5
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 22] = (gdt_entry) { //perro 1-6
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 23] = (gdt_entry) { //perro 1-7
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 24] = (gdt_entry) { //perro 2-0
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 25] = (gdt_entry) { //perro 2-1
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 26] = (gdt_entry) { //perro 2-2
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 27] = (gdt_entry) { //perro 2-3
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 28] = (gdt_entry) { //perro 2-4
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 29] = (gdt_entry) { //perro 2-5
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 30] = (gdt_entry) { //perro 2-6
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+        [GDT_IDX_NULL_DESC + 31] = (gdt_entry) { //perro 2-7
+        (unsigned short)    0x0000,         /* limit[0:15]  */
+        (unsigned short)    0x0000,         /* base[0:15]   */
+        (unsigned char)     0x00,           /* base[23:16]  */
+        (unsigned char)     0x05,           /* type         */
+        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x00,           /* dpl          */
+        (unsigned char)     0x01,           /* p            */
+        (unsigned char)     0x0000,         /* limit[16:19] */
+        (unsigned char)     0x01,           /* avl          */
+        (unsigned char)     0x00,           /* l            */
+        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* g            */
+        (unsigned char)     0x00,           /* base[31:24]  */
+    },
+
 };
 
 gdt_descriptor GDT_DESC = {
