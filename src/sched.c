@@ -74,9 +74,7 @@ void sched_agregar_tarea(perro_t *perro)
 	if(i != -1){
 		scheduler.tasks[i].perro_t = perro;
 		scheduler.tasks[i].gdt_index = i + 15;
-		int x = perro->x;
-		int y = perro->y;
-		screen_actualizar_posicion_mapa(uint x, uint y);
+		
 	}
 }
 
@@ -86,14 +84,12 @@ void sched_remover_tarea(unsigned int gdt_index)
 	uint x = 0;
 	uint y = 0;
 	while(i<=MAX_CANT_TAREAS_VIVAS){
-		if(scheduler.tasks[i].gdt_index = gdt_index){
-			x = scheduler.tasks[i].perro_t->x;
-			y = scheduler.tasks[i].perro_t->y;
+		if(scheduler.tasks[i].gdt_index = gdt_index){			
 			scheduler.tasks[i].perro_t = NULL;
 		}
 	}
 
-	screen_actualizar_posicion_mapa(uint x, uint y);
+	
 }
 
 

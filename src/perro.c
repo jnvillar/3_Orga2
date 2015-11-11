@@ -27,6 +27,10 @@ void game_perro_reciclar_y_lanzar(perro_t *perro, uint tipo)
 	perro->y = j->y_cucha;
 	perro->tipo = tipo;
 	perro->libre = FALSE;
+	mmu_inicializar_memoria_perro(perro,perro->jugador->index, tipo);
+	sched_agregar_tarea(perro_t *perro);
+	screen_actualizar_posicion_mapa(perro->x, perro-> y);
+
 
 	// ahora debo llamar a rutinas que inicialicen un nuevo mapa de
 	// memoria para el nuevo perro, que carguen su tss correspondiente,
