@@ -14,10 +14,12 @@ sched_t scheduler;
 void sched_inicializar()
 {
 	scheduler.current = 0;
+	scheduler.tasks[0].gdt_index = 13;
+	scheduler.tasks[0].perro_t = NULL;
 
-	int i = 0;
+	int i = 1;
 	while(i<=MAX_CANT_TAREAS_VIVAS){		
-		scheduler.tasks[i].gdt_index = 14; //	Tarea iddle
+		scheduler.tasks[i].gdt_index = 14;
 		scheduler.tasks[i].perro_t = NULL; 
 		i++;		
 	}
