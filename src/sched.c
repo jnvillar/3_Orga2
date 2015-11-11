@@ -14,9 +14,9 @@ sched_t scheduler;
 void sched_inicializar()
 {
 	scheduler.current = 0;
-	int i = 0;
 
-	while(i<MAX_CANT_TAREAS_VIVAS){		
+	int i = 0;
+	while(i<=MAX_CANT_TAREAS_VIVAS){		
 		scheduler.tasks[i].gdt_index = 14; //	Tarea iddle
 		scheduler.tasks[i].perro_t = NULL; 
 		i++;		
@@ -24,11 +24,24 @@ void sched_inicializar()
 }
 
 
+
+
 int sched_buscar_indice_tarea(uint gdt_index) {
     int i = 0;
-    while(i<MAX_CANT_TAREAS_VIVAS){
+    while(i<=MAX_CANT_TAREAS_VIVAS){
     	if(scheduler.tasks[i].perro_t != NULL && scheduler.tasks[i].gdt_index == gdt_index){
     		return i;
+    	}
+    	i++;
+    }
+    return -1;    
+}
+
+uint sched_buscar_gdt_tarea(uint perro_t *perro) {
+    int i = 0;
+    while(i<=MAX_CANT_TAREAS_VIVAS){
+    	if(scheduler.tasks[i].perro_t == perro ){
+    		return scheduler.tasks[i].gdt_index;
     	}
     	i++;
     }
@@ -39,7 +52,7 @@ int sched_buscar_indice_tarea(uint gdt_index) {
 int sched_buscar_tarea_libre()
 {
 	int i = 0;
-	while(i<MAX_CANT_TAREAS_VIVAS){
+	while(i<=MAX_CANT_TAREAS_VIVAS){
 		if(scheduler.tasks[i].perro_t == NULL){
 			return i;			
 		}
@@ -61,20 +74,26 @@ void sched_agregar_tarea(perro_t *perro)
 	if(i != -1){
 		scheduler.tasks[i].perro_t = perro;
 		scheduler.tasks[i].gdt_index = i + 15;
-		agergar a la gdt 8 perros;
+		int x = perro->x;
+		int y = perro->y;
+		screen_actualizar_posicion_mapa(uint x, uint y);
 	}
 }
 
 void sched_remover_tarea(unsigned int gdt_index)
 {
 	int i = 0;
-	while(i<MAX_CANT_TAREAS_VIVAS){
+	uint x = 0;
+	uint y = 0;
+	while(i<=MAX_CANT_TAREAS_VIVAS){
 		if(scheduler.tasks[i].gdt_index = gdt_index){
+			x = scheduler.tasks[i].perro_t->x;
+			y = scheduler.tasks[i].perro_t->y;
 			scheduler.tasks[i].perro_t = NULL;
 		}
 	}
 
-	Limpiar pantalla
+	screen_actualizar_posicion_mapa(uint x, uint y);
 }
 
 
@@ -82,13 +101,15 @@ uint sched_proxima_a_ejecutar()
 {
 	int i = scheduler.current;
 	int j = 0;
-	while(j<MAX_CANT_TAREAS_VIVAS){
+	while(j<=MAX_CANT_TAREAS_VIVAS){
 		if(scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro_t != NULL){
 			return i%MAX_CANT_TAREAS_VIVAS;
 		}
 		j++;
 		i++;
-	}    
+	}  
+	j = 0;
+	return 0;   
 }
 
 
@@ -103,5 +124,6 @@ ushort sched_atender_tick()
     }
     
 }
+
 
 

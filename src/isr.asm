@@ -124,18 +124,19 @@ _isr32:
     pushad
     call fin_intr_pic1
     call sched_tarea_actual
-    push eax
+    push eax    
     call game_atender_tick            ; llamo a atender tick con el perro anterior
     call sched_atender_tick
 
     str cx
     cmp ax,cx
     je.fin
-
     jmp ax:0
 
     .fin:
     call screen_actualizar_reloj_global
+    
+    pop eax
     popad
     iret
 

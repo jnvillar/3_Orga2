@@ -38,8 +38,8 @@ void game_perro_reciclar_y_lanzar(perro_t *perro, uint tipo)
 
 // el perro descargó sus huesos o realizó una acción no válida y caputó, hay que sacarlo del sistema.
 void game_perro_termino(perro_t *perro)
-{
-//	~~~ completar ~~~
+{	
+	sched_remover_tarea(sched_buscar_gdt_tarea(perro));
 }
 
 // transforma código de dirección en valores x e y 
@@ -77,6 +77,11 @@ uint game_perro_mover(perro_t *perro, direccion dir)
    			perro->x = nuevo_x;
    			perro->y = nuevo_y;
    			mmu_mover_perro(perro, viejo_x, viejo_y);
+   			screen_actualizar_posicion_mapa(uint x, uint y);
+   			if((nuevo_x>79 || nuevo_y>49) || (nuevo_x == perro->jugador->x_cucha && nuevo_y == perro->jugador->y_cucha)){
+   				game_perro_termino(perro);
+   			}
+
    		}
    	}
     
