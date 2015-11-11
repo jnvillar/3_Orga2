@@ -123,6 +123,7 @@ ISR 19
 
 global _isr32
 _isr32:
+    xchg bx, bx
 
     pushad
     call fin_intr_pic1
@@ -155,6 +156,7 @@ _isr32:
 
 global _isr33
 _isr33:
+    xchg bx, bx
     pushad
     call fin_intr_pic1
     in al, 0x60

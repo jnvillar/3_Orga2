@@ -97,7 +97,7 @@ uint sched_proxima_a_ejecutar()
 {
 	int i = scheduler.current;
 	int j = 0;
-	uint jugador = scheduler.tasks[current].perro->jugador->index;
+	uint jugador = scheduler.tasks[scheduler.current].perro->jugador->index;
 	while(j<=MAX_CANT_TAREAS_VIVAS){
 		if(scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro != NULL && scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro->jugador-> index != jugador ){
 			
