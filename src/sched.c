@@ -19,7 +19,7 @@ void sched_inicializar()
 
 	int i = 1;
 	while(i<=MAX_CANT_TAREAS_VIVAS){		
-		scheduler.tasks[i].gdt_index = 14;
+		scheduler.tasks[i].gdt_index = 13 + i;
 		scheduler.tasks[i].perro = NULL; 
 		i++;		
 	}
@@ -97,8 +97,10 @@ uint sched_proxima_a_ejecutar()
 {
 	int i = scheduler.current;
 	int j = 0;
+	uint jugador = scheduler.tasks[current].perro->jugador->index;
 	while(j<=MAX_CANT_TAREAS_VIVAS){
-		if(scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro != NULL){
+		if(scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro != NULL && scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro->jugador-> index != jugador ){
+			
 			return i%MAX_CANT_TAREAS_VIVAS;
 		}
 		j++;
