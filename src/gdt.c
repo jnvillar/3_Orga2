@@ -207,18 +207,18 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
      // TSS DESCRIPTOR PERRO A 4
-        [GDT_IDX_NULL_DESC + 18] = (gdt_entry) {
-        (unsigned short)    0x0000,         /* limit[0:15]  */
+        [GDT_IDX_NULL_DESC + 17] = (gdt_entry) { 
+        (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
-        (unsigned char)     0x05,           /* type         */
-        (unsigned char)     0x00,           /* s            */
+        (unsigned char)     0x9,            /* type         */
+        (unsigned char)     0x0,            /*              */
         (unsigned char)     0x00,           /* dpl          */
         (unsigned char)     0x01,           /* p            */
-        (unsigned char)     0x0000,         /* limit[16:19] */
-        (unsigned char)     0x01,           /* avl          */
-        (unsigned char)     0x00,           /* l            */
-        (unsigned char)     0x01,           /* db           */
+        (unsigned char)     0x00,           /* limit[16:19] */
+        (unsigned char)     0x00,           /* avl          */
+        (unsigned char)     0x0,            /*              */
+        (unsigned char)     0x0,            /*              */
         (unsigned char)     0x00,           /* g            */
         (unsigned char)     0x00,           /* base[31:24]  */
     },

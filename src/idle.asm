@@ -26,6 +26,7 @@ idle:
         imprimir_texto_mp ebx, 1, 0x0f, 49, 76-1
         mov ebx, chirimbolo_close
         imprimir_texto_mp ebx, 1, 0x0f, 49, 76+1
+    ;xchg bx, bx
 
     jmp .loopear
 
@@ -38,3 +39,5 @@ message4: db '\'
 
 chirimbolo_open: db '('
 chirimbolo_close: db ')'
+
+; t=30763482

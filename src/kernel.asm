@@ -178,7 +178,7 @@ BITS 32
     jmp 0x68:0
 
 
-    xchg bx, bx
+    ;xchg bx, bx
 
 
 
