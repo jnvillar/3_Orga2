@@ -20,7 +20,16 @@ void wait(int pseudosecs)
 
 uint game_syscall_manejar(uint syscall, uint param1)
 {
-    // ~ completar llamando a las funciones que haga falta ~
+    
+if(syscall == 1){
+	game_perro_mover(sched_tarea_actual(), param1);
+}else if(syscall == 2){
+	game_perro_cavar(sched_tarea_actual());
+}else if(syscall == 3){
+	game_perro_olfatear(sched_tarea_actual());
+}else if(syscall == 4){
+
+}
     return 0;
 }
 
