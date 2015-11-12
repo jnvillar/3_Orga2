@@ -121,6 +121,7 @@ void mmu_inicializar(){
 
 
 uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_tipo){
+	
 	uint *pagDir = (uint *) mmu_proxima_pagina_fisica_libre(); 	// PIDO UNA PAGINA LIBRE
 	mmu_inicializar_pagina(pagDir); 	// LIMPIO PAGINA
 	int i = 0x00000000;
@@ -154,12 +155,15 @@ uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_
 		mmu_mapear_pagina(0x800000+j*4096,(uint )pagDir,j*4096+0x500000,0x007);
 		j++;
 	}
+    breakpoint();
 
 	mmu_mapear_pagina(0x401000, (uint) pagDir, dondeCopiar, 0x007);
+	breakpoint();
 	mmu_copiar_pagina(aCopiar,0x401000);
+   
 
 
-
+	tlbflush();
 	return (uint ) pagDir;
 }
 

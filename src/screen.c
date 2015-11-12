@@ -12,7 +12,9 @@ definicion de funciones del scheduler
 #define POSICION_RELOJES_C_A 4
 #define POSICION_RELOJES_C_B 60
 extern int ultimo_cambio;
-
+int idJugadorA = 0;
+int idJugadorB = 0;
+int indexPerros = 0;
 extern jugador_t jugadorA, jugadorB;
 
 
@@ -68,6 +70,17 @@ void imprim(char letra){
     }
     if (letra == 0x10){
         print("q",0,0,3);
+        perro_t perro;
+        game_perro_inicializar(&perro, &jugadorA, indexPerros, idJugadorA);
+        idJugadorA++;
+        indexPerros++;
+        game_perro_reciclar_y_lanzar(&perro, 0);
+       
+
+
+
+
+
     }
     if (letra == 0x12){
         print("e",0,0,3);
