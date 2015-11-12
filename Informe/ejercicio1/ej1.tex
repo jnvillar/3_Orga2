@@ -30,14 +30,6 @@ Para este ítem completamos el archivo \textit{GDT}.c proporcionado por la cated
 Como la primer posicion de la tabla \textit{GDT} debe ser corresponder a una entrada nula, llenamos la primer posicion como muestra la imagen debajo.
 \\
 
-\begin{figure}[H]
-\begin{center}
-\minipage{0.55\textwidth}
-  \includegraphics[width=\linewidth]{ejercicio1/GDTnula.png}
-  \caption{{\small Este descriptor corresponde a la primer entrada de la \textit{GDT}}} 
-\endminipage
-\end{center}
-\end{figure}
 
 Luego, creamos los 4 segmentos que se piden a partir de la posicion 8 de la \textit{GDT}, ya que por enunciado, no se deben tocar las primeras 7 posiciones de la table de descriptores. Mostramos en las imagenes de abajo como creamos un descriptor de datos y otro de codigos. 
 \\
@@ -124,7 +116,7 @@ Donde 0x40 es la dirección donde en nuestra \textit{GDT} compienza el segmento 
 
 \end{itemize}
 
-Ahora que ya nos encontramos con el procezador trabajando en modo protegido, procedemos a setear la pila en la dirección 0x27000. Para eso seteamos los registros ebp y esp en la dirección 0x27000 con las siguientes instrucciones: 
+Ahora que ya nos encontramos con el procesador trabajando en modo protegido, procedemos a setear la pila en la dirección 0x27000. Para eso seteamos los registros ebp y esp en la dirección 0x27000 con las siguientes instrucciones: 
 \begin{center}
 mov ebp, 0x27000\\
 mov esp, 0x27000\\
@@ -144,12 +136,12 @@ Para este ítem, agregamos a la \textit{GDT} el siguiente segmento, el cual dire
 \end{figure}
 
 
-Luego cargamos en un registro de segmentos, en este caso  \textit{FS}, la posicion del segmento anterior. Por ultimo con las siguiente instruccion podemos poner en la esquina superior izquierda de la pantalla lo que querramos
+Luego cargamos en un registro de segmento, en este caso  \textit{FS}, la posicion del segmento anterior. Por ultimo con las siguiente instrucción podemos poner en la esquina superior izquierda de la pantalla lo que querramos
 \begin{center}
 mov word[fs:0x00],  \textit{aimprimir}
 \end{center}
 
-Donde  \textit{aimprimir} es algo de tamaño word, y su valor es lo que aparece en la esquina superior izquierda de la pantalla. Esto ocurre porque se carga el semento que comienza en la dirección a que la dirección 0xB8000 y se le suma el offset 0 y esta es la primer dirección de la memoria de vídeo utilizada por la pantalla.\\
+Donde  \textit{aimprimir} es algo de tamaño word, y su valor es el que aparece en la esquina superior izquierda de la pantalla. Esto ocurre porque se carga el segmento que comienza en la dirección a que la dirección 0xB8000 y se le suma el offset 0 y esta es la primer dirección de la memoria de vídeo utilizada por la pantalla.\\
 
 Si por ejemplo escribimos la siguiente línea:
 \begin{center}
@@ -169,7 +161,7 @@ Obtenemos este resultado, que es lo que pedía el ejercicio.
 
 \subsection{Ítem d): Limpiar la pantalla y pintar el área del mapa}
 
-En este punto creamos una funcion auxiliar en C para limpiar la pantalla. La función pinta la pantalla de gris y es la siguiente:
+En este punto creamos una función auxiliar en C para limpiar la pantalla. La función pinta la pantalla de gris y es la siguiente:
 
 \begin{figure}[H]
 \begin{center}
@@ -192,7 +184,7 @@ Esta función la escribimos en \textit{screen.c} y utiliza la matriz P creada po
 \end{figure}
 
 
-Para pintar el mapa utilizamos la funcion dada por la catedra  \textit{screen$\_$inicializar}. Para utilizar estas funciones, escribimos en \textit{kernel.asm} las siguientes lineas con el siguiente resultado:
+Para pintar el mapa utilizamos la función dada por la catedra  \textit{screen$\_$inicializar}. Para utilizar estas funciones, escribimos en \textit{kernel.asm} las siguientes lineas con el siguiente resultado:
 
 \begin{center}
  call aux$\_$limpiarPantalla    \\

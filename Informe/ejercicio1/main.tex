@@ -47,7 +47,7 @@ Luego, creamos los 4 segmentos que se piden a partir de la posicion 8 de la GDT,
 \minipage{0.5\textwidth}
   \includegraphics[width=\linewidth]{ejercicio1/GDTcodigo0.png}
   \caption{{\small Este descriptor corresponde al segmento de datos de nivel 0}} 
-\endminipage
+\endminipage\\
 \minipage{0.5\textwidth}
   \includegraphics[width=\linewidth]{ejercicio1/GDTdatos0.png}
   \caption{{\small Este descriptor corresponde al segmento de código de nivel 0}} 
@@ -76,7 +76,7 @@ Completamos nuestros descriptores como marcan las figuras 3 y 4 de esa forma por
 \item [\textit{Base:}] En el tp se pide que los descriptores direcciones los primeros 500mb de memoria. Por ende la base corresponde a la direccion 0x00000000.
 \item [\textit{G:}]  Para poder direccionar 500mb, no nos alcanza la cantidad de bits que hay para el limite, por ende necesitamos activar la granularidad para poder abarcar más memoria, ya que cuando esta activada la posicion que indica el limite se multiplica por 4kb.
 \item [\textit{Límite:}] Como esta activada la granularidad, podemos abarcar 500mb de memoria, el limite correspondiente a 500mb con la granularidad activada es 0x0F400.
-\item [\textit{Type:}] Aqui se indica si el descriptor es de código/datos, a los correspondientes a datos les pusimos que eran de tipo 0x02 (segmento de datos de escritura/lectura) y a los de codigo que eran de tipo 0x0A (segmentdo de código de escritura/lectura).
+\item [\textit{Type:}] Aqui se indica si el descriptor es de código/datos. A los correspondientes a datos les pusimos que eran de tipo 0x02 (segmento de datos de escritura/lectura) y a los de codigo que eran de tipo 0x0A (segmentdo de código de escritura/lectura).
 \item [\textit{S:}] Con este bit se decide si es un segmento de sistema (s=0) o si son de código/data (s=1), por ende a este bit le corresponde un 0x1.
 \item [\textit{Dpl:}] En esta seccion se declara el privilegio del segmento, a los que eran de nivel 0 les corresponde un 0x00 y a los de nivel 3 un 0x03
 \item [\textit{P:}] Este es el bit de present. Cuando es ’1’ el segmento correspondiente esta presente en la memoria RAM. Si es ’0’, el segmento esta en la memoria virtual. Por ende lo seteamos en 1.

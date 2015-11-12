@@ -39,7 +39,7 @@ INSERTAR IMAGEN
 
 
 \subsection{item c)}
-Lo que nos piden en este punto es hacer la función \textit{void tss_completar(int jugador, int perro, perro_t *rrope)};\\
+Lo que nos piden en este punto es hacer la función $void$ $tss\_completar(int$ $jugador, int$ $perro, perro\_t *rrope)$\\
 Lo primero que  hago en esta función es pedir una nueva página libre para usarlo como una pila de nivel 0 para la taréa.\\
 Lo siguiente que hago es preguntar si es la taréa (el perro) es una taréa correspondiente al \textbf{jugador A} o al \textbf{jugador B}. Supongamos que estoy rellenando una TSS para un perro del jugador A. Para el jugador B es similar.\\
 En el campo esp0 pongo la nueva página que pedí. Va a ser su espacio de trabajo.\\
@@ -47,15 +47,66 @@ En los campos \textit{cs}, \textit{es}, \textit{gs}, \text{ss}, \textit{ds}, \te
 Las entradas \textit{esp} y \textit{ebp} tienen 0x0402000-12.\\
 La entrada \textit{eip} tiene 0x00401000.\\
 \textit{eeflags} = 0x202, ... y así rellenamos las otras entradas con los valores correspondientes.\\
-Lo único distinto a lo descripto en el pdf es la entrada \texit{cr3} que va a ser distinto para cada taréa.\\
-El nuevo cr3 va a ser el devuelto por la función mmu_inicializar_memoria_perro. Se lo asigno al campo correspondiente y actualizo la entrada correspondiente a la GDT para esa taréa seteando los campos base e índice.
+Lo único distinto a lo descripto en el pdf es la entrada cr3 que va a ser distinto para cada taréa.\\
+El nuevo cr3 va a ser el devuelto por la función mmu\_inicializar\_memoria\_perro. Se lo asigno al campo correspondiente y actualizo la entrada correspondiente a la GDT para esa taréa seteando los campos base e índice.
 La siguiente imágen muestra dicho proceso.\	\
 
+\subsection{item d)}
+
+La entrada de la GDT correspondiente a la taréa inicial en principio la definimos con cualquier 
+valor  en la base pero con los valores correspondientes en los demás campos.
+
+\begin{figure}[H]
+\begin{center}
+\minipage{1.00\textwidth}
+\includegraphics[width=\linewidth]{ejercicio6/gdt_tarea_inicial.png}
+\caption{{\small \textit{Entrada de la GDT correspondiente a la tarea inicial }}}
+\endminipage
+\end{center}
+\end{figure}
 
 
+Luego con la función tss\_inicializar le asignamos la base correspondiente.
 
+\begin{figure}[H]
+\begin{center}
+\minipage{1.00\textwidth}
+\includegraphics[width=\linewidth]{ejercicio6/tss_inicializar_base_inicial.png}
+\caption{{\small \textit{Entrada de la GDT correspondiente a la tarea inicial }}}
+\endminipage
+\end{center}
+\end{figure}
 
+\subsection{item e)}
+Esta sección es similar a la anterior. Creamos una entrada en la GDT para esta taréa y en la función tss\_inicializar seteamos los valores correspondientes para su base en la GDT y también seteamos su TSS.\\
+Como nos dicen que la taréa se encuentra en la dirección 0x00010000 ese es el valor que ponemos en la base y por el enunciado va a compartir el CR3. Lo mismo con su pila.\\
+\begin{figure}[H]
+\begin{center}
+\minipage{1.00\textwidth}
+\includegraphics[width=\linewidth]{ejercicio6/tss_idle.png}
+\caption{{\small \textit{Seteo la TSS de la tarea idle con los valores correspondientes}}}
+\endminipage
+\end{center}
+\end{figure}
 
+\subsection{item f)}
+Esto es simplemente hacer un jump far en el archivo kernel.asm.\\
+El intercambio en los valores de la TSS lo hace automáticamente el procesador.\\
+ $jmp$ 0x68:0
 
+ \subsection{item g)}
+Para este punto lo que hacemos en la interrupción 0x46 es llamar a la función $game\_syscall\_manejar$ pasandole los parámetros que me llegan en la interrupción por EAX y ECX.\\
+Y lo que hace la función es, dependiendo de los parámetros que le llega, llama a la función correspondiente ya séa:\\
+$game\_perro\_mover$, $game\_perro\_cavar$ o $game\_perro\_olfatear$. El código es el siguiente:\\
 
+\begin{figure}[H]
+\begin{center}
+\minipage{1.00\textwidth}
+\includegraphics[width=\linewidth]{ejercicio6/syscall_manejar.png}
+\caption{{\small \textit{Manejo de interrupciones}}}
+\endminipage
+\end{center}
+\end{figure}
 
+ \subsection{item h)}
+ NO ESTÁ HECHO TODAVIA. VA A ESTAR EN kernel.asm
