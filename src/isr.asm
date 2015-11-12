@@ -29,6 +29,8 @@ extern game_perro_cavar
 extern game_perro_olfatear
 extern game_atender_tick
 extern sched_atender_tick
+extern sched_proxima_a_ejecutar
+extern game_syscall_manejar
 
 ;;
 ;; Definición de MACROS
@@ -123,7 +125,7 @@ ISR 19
 
 global _isr32
 _isr32:
-    xchg bx, bx
+    ;xchg bx, bx
 
     pushad
     call fin_intr_pic1
@@ -132,6 +134,8 @@ _isr32:
     call game_atender_tick            ; llamo a atender tick con el perro anterior
     call sched_atender_tick
 
+    shl ax, 3
+    ;xchg bx, bx
     str cx
     cmp ax,cx
     je .fin
@@ -141,7 +145,7 @@ _isr32:
     jmp selector:offset
 
     .fin:
-        call screen_actualizar_reloj_global
+       ; call screen_actualizar_reloj_global
     
     pop eax
     popad
@@ -156,7 +160,7 @@ _isr32:
 
 global _isr33
 _isr33:
-    xchg bx, bx
+    ;xchg bx, bx
     pushad
     call fin_intr_pic1
     in al, 0x60
@@ -179,44 +183,14 @@ global _isr70
 _isr70:
     pushad
 
-    ;str ebx
-    mov ebx, game_perro_actual
+    push ecx
+    push ebx
+	call game_syscall_manejar
+	add esp, 4
+	add esp, 4
 
-    call fin_intr_pic1
-    cmp eax, 0x1
-    je moverse
-    cmp eax, 0x2
-    je cavar
-    cmp eax, 0x3
-    je olfatear
-    jmp recibirOrden
-
-    moverse:
-        push ecx
-        push ebx
-        call game_perro_mover
-        add esp, 4
-        add esp, 4
-        jmp fin
-
-    cavar:
-        push ebx
-        call game_perro_cavar
-        add esp, 4
-        jmp fin
-
-    olfatear:
-        push ebx
-        call game_perro_olfatear
-        add esp, 4
-        jmp fin
-
-    recibirOrden:
-        jmp fin
-
-    fin:
-        popad
-        iret
+    popad
+    iret
 
 
 

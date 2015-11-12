@@ -97,27 +97,41 @@ uint sched_proxima_a_ejecutar()
 {
 	int i = scheduler.current;
 	int j = 0;
-	uint jugador = scheduler.tasks[scheduler.current].perro->jugador->index;
-	while(j<=MAX_CANT_TAREAS_VIVAS){
-		if(scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro != NULL && scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro->jugador-> index != jugador ){
-			return i%MAX_CANT_TAREAS_VIVAS;
-		}
-		j++;
-		i++;
-	}  
+	if (scheduler.tasks[scheduler.current].perro != NULL){
+		uint jugador = scheduler.tasks[scheduler.current].perro->jugador->index;
+		while(j<=MAX_CANT_TAREAS_VIVAS){
+			if(scheduler.tasks[i%(MAX_CANT_TAREAS_VIVAS+1)].perro != NULL && scheduler.tasks[i%(MAX_CANT_TAREAS_VIVAS+1)].perro->jugador-> index != jugador ){
+				return i%(MAX_CANT_TAREAS_VIVAS+1);
+			}
+			j++;
+			i++;
+		}  
 
-	j = 0;	
-	while(j<=MAX_CANT_TAREAS_VIVAS){
-		if(scheduler.tasks[i%MAX_CANT_TAREAS_VIVAS].perro != NULL){
-			return i%MAX_CANT_TAREAS_VIVAS;
-		}
-		j++;
-		i++;
-	}  
+		j = 0;
+		i = scheduler.current;
+
+		while(j<=MAX_CANT_TAREAS_VIVAS){
+			if(scheduler.tasks[i%(MAX_CANT_TAREAS_VIVAS+1)].perro != NULL){
+				return i%(MAX_CANT_TAREAS_VIVAS+1);
+			}
+			j++;
+			i++;
+		} 
+	} else {
+
+		while(j<=MAX_CANT_TAREAS_VIVAS){
+			if(scheduler.tasks[i%(MAX_CANT_TAREAS_VIVAS+1)].perro != NULL){
+				return i%(MAX_CANT_TAREAS_VIVAS+1);
+			}
+			j++;
+			i++;
+		} 
+	}
+	 
 
 
-	j = 0;
 	return 0;   
+	
 }
 
 
@@ -125,7 +139,9 @@ ushort sched_atender_tick()
 {
    
     if(sched_tarea_actual() == scheduler.tasks[sched_proxima_a_ejecutar()].perro){    	
+    	
     	return scheduler.tasks[scheduler.current].gdt_index;
+    	
     }else{
     	scheduler.current = sched_proxima_a_ejecutar();
     	return scheduler.tasks[scheduler.current].gdt_index;

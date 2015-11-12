@@ -86,6 +86,9 @@ BITS 32
     mov ax, 0x48
     mov ss, ax
 
+    mov es, ax
+    mov gs, ax
+
     ; Establecer la base de la pila
 
     mov ebp, 0x27000
@@ -150,6 +153,7 @@ BITS 32
     ; Inicializar la IDT
 
     call idt_inicializar
+   
 
     ; Cargar IDT
 
