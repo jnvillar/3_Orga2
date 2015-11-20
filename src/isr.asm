@@ -69,6 +69,7 @@ exception33 db     0
 global _isr%1
 
 _isr%1:
+	xchg bx, bx
     push eax    
     mov eax, %1
     push 0xf
@@ -140,8 +141,8 @@ _isr32:
     cmp ax,cx
     je .fin
 
+    xchg bx, bx
     mov [selector], ax
-
     jmp selector:offset
 
     .fin:
@@ -168,6 +169,7 @@ _isr33:
     call imprim
     add esp, 4
     popad
+    ;xchg bx, bx
     iret
 
  

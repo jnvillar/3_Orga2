@@ -207,7 +207,7 @@ gdt_entry gdt[GDT_COUNT] = {
     },
 
      // TSS DESCRIPTOR PERRO A 4
-        [GDT_IDX_NULL_DESC + 17] = (gdt_entry) { 
+        [GDT_IDX_NULL_DESC + 18] = (gdt_entry) { 
         (unsigned short)    0x0067,         /* limit[0:15]  */   
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */

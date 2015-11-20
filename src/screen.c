@@ -14,7 +14,7 @@ definicion de funciones del scheduler
 extern int ultimo_cambio;
 int idJugadorA = 0;
 int idJugadorB = 0;
-int indexPerros = 0;
+int indexPerros;
 extern jugador_t jugadorA, jugadorB;
 
 
@@ -71,13 +71,13 @@ void imprim(char letra){
     if (letra == 0x10){
         print("q",0,0,3);
         perro_t perro;
+        indexPerros = sched_buscar_tarea_libre(0);
         game_perro_inicializar(&perro, &jugadorA, indexPerros, idJugadorA);
-        idJugadorA++;
-        indexPerros++;
+        idJugadorA++;       
         game_perro_reciclar_y_lanzar(&perro, 0);
        
 
-
+        //breakpoint();
 
 
 

@@ -41,7 +41,7 @@ void mmu_mapear_pagina(uint virtual, uint cr3, uint fisica, uint attrs){
 		uint atr_aux = attrs;
 		atr_aux = atr_aux >> 1;
 		if (pageDirAux % 4 == 0 && atr_aux % 2 == 1){ 			// si r/w == 0 y attrs es de r/w
-			*pagDir = *pagDir | 10;
+			*pagDir = *pagDir | 2;
 
 		}
 		atr_aux = atr_aux >> 1;		
@@ -53,7 +53,7 @@ void mmu_mapear_pagina(uint virtual, uint cr3, uint fisica, uint attrs){
 		pageTable = (uint *) mmu_proxima_pagina_fisica_libre();
 		*pagDir = ((uint )pageTable & 0xFFFFF000) | 0x00000007;			// LE PASAMOS LA DIRECCION DE LA TABLA Y EL PRESENTE
 		
-		pageTableEntry = pageTable + ((virtual >> 12) & 0x000003FF)*4;
+		pageTableEntry = pageTable + ((virtual >> 12) & 0x000003FF);
 		mmu_inicializar_pagina(pageTable);
 	}
 	
@@ -155,11 +155,16 @@ uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_
 		mmu_mapear_pagina(0x800000+j*4096,(uint )pagDir,j*4096+0x500000,0x007);
 		j++;
 	}
-    breakpoint();
-
+    //breakpoint();
 	mmu_mapear_pagina(0x401000, (uint) pagDir, dondeCopiar, 0x007);
-	breakpoint();
+    uint viejo_cr3 = rcr3();
+	mmu_mapear_pagina(0x401000, (uint) 0x27000, dondeCopiar, 0x007);
+    lcr3(0x27000);
+	//breakpoint();
 	mmu_copiar_pagina(aCopiar,0x401000);
+    lcr3(viejo_cr3);
+
+	//breakpoint();
    
 
 
@@ -172,10 +177,8 @@ void mmu_copiar_pagina(uint src, uint dst){
 	uint *sr = (uint *) src;
 	uint *ds = (uint *) dst;
 	int i = 0;
-	while(i<4096){
-		*ds = *sr;
-		ds += 4;
-		sr += 4;
+	while(i<1024){
+		ds[i] = sr[i];
 		i++;
 	}
 }
