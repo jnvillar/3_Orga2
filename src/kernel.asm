@@ -177,7 +177,7 @@ BITS 32
    
     ; Saltar a la primera tarea: Idle
 
-    xchg bx, bx
+    ;xchg bx, bx
 
     jmp 0x68:0
 

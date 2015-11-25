@@ -48,62 +48,64 @@ void tss_inicializar() {
 
 void tss_completar(int jugador, int perro, perro_t *rrope){
 	uint espCero = mmu_proxima_pagina_fisica_libre();
-	if (jugador == 0 ){
-		tss_jugadorA[perro].esp0 = espCero;
-	    tss_jugadorA[perro].cs = 0x58;
-	    tss_jugadorA[perro].es = 0x50;
-	    tss_jugadorA[perro].gs = 0x50;
-	    tss_jugadorA[perro].ss = 0x50;
-	    tss_jugadorA[perro].ds = 0x50;
-	    tss_jugadorA[perro].fs = 0x50;
-	    tss_jugadorA[perro].eax = 0x0;
-	    tss_jugadorA[perro].ebx = 0x0;
-	    tss_jugadorA[perro].ecx = 0x0;
-	    tss_jugadorA[perro].edx = 0x0;
-	    tss_jugadorA[perro].esi = 0x0;
-	    tss_jugadorA[perro].edi = 0x0;
-	    tss_jugadorA[perro].esp = 0x0402000-12;
-	    tss_jugadorA[perro].eip = 0x00401000;
-	    tss_jugadorA[perro].eflags = 0x202;
-		tss_jugadorA[perro].esp0 = espCero;
-		tss_jugadorA[perro].eax = 0x0;
-		tss_jugadorA[perro].iomap = 0xFFFF;
-		tss_jugadorA[perro].ldt = 0x00000000;
+	int posicion = perro - 1; //perro es la posicion en el arreglo de tareas, le tengo q restar uno porque esta la iddle
+
+	if (jugador == 0 ){		
+	    tss_jugadorA[posicion].cs = 0x5B;
+	    tss_jugadorA[posicion].es = 0x53;
+	    tss_jugadorA[posicion].gs = 0x53;
+	    tss_jugadorA[posicion].ss = 0x53;
+	    tss_jugadorA[posicion].ds = 0x53;
+	    tss_jugadorA[posicion].fs = 0x53;
+	    tss_jugadorA[posicion].eax = 0x0;
+	    tss_jugadorA[posicion].ebx = 0x0;
+	    tss_jugadorA[posicion].ecx = 0x0;
+	    tss_jugadorA[posicion].edx = 0x0;
+	    tss_jugadorA[posicion].esi = 0x0;
+	    tss_jugadorA[posicion].edi = 0x0;
+	    tss_jugadorA[posicion].esp = 0x0402000-0xC;
+	    tss_jugadorA[posicion].eip = 0x00401000;
+	    tss_jugadorA[posicion].eflags = 0x202;
+		tss_jugadorA[posicion].esp0 = (espCero+4096);
+		tss_jugadorA[posicion].iomap = 0xFFFF;
+		tss_jugadorA[posicion].ldt = 0x00000000;
+		tss_jugadorA[posicion].ss0 = 0x48;
 		uint nuevoCr3 = mmu_inicializar_memoria_perro(rrope, jugador, perro);
-		tss_jugadorA[perro].cr3 = nuevoCr3;
+		tss_jugadorA[posicion].cr3 = nuevoCr3;
 
 
-		gdt[14+perro].base_0_15 = (uint )&tss_jugadorA[perro] & 0x0000FFFF;
-		gdt[14+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 16;
-		gdt[14+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 24;
+		gdt[14+posicion].base_0_15 =   (uint )&tss_jugadorA[posicion] & 0x0000FFFF;
+		gdt[14+posicion].base_23_16 = ((uint )&tss_jugadorA[posicion] & 0x00FF0000) >> 16;
+		gdt[14+posicion].base_31_24 = ((uint )&tss_jugadorA[posicion] & 0xFF000000) >> 24;
 
 	} else {
-		tss_jugadorA[perro].esp0 = espCero;
-	    tss_jugadorB[perro].cs = 0x84;
-	    tss_jugadorB[perro].es = 0x72;
-	    tss_jugadorB[perro].gs = 0x72;
-	    tss_jugadorB[perro].ss = 0x72;
-	    tss_jugadorB[perro].ds = 0x72;
-	    tss_jugadorB[perro].fs = 0x72;
-	    tss_jugadorB[perro].eax = 0x0;
-	    tss_jugadorB[perro].ebx = 0x0;
-	    tss_jugadorB[perro].ecx = 0x0;
-	    tss_jugadorB[perro].edx = 0x0;
-	    tss_jugadorB[perro].esi = 0x0;
-	    tss_jugadorB[perro].edi = 0x0;
-	    tss_jugadorB[perro].esp = 0x0402000-12;
-	    tss_jugadorB[perro].eip = 0x00401000;
-	    tss_jugadorB[perro].eflags = 0x202;
-		tss_jugadorB[perro].esp0 = espCero;
-		tss_jugadorB[perro].eax = 0x0;
-		tss_jugadorB[perro].iomap = 0xFFFF;
-		tss_jugadorB[perro].ldt = 0x00000000;
+		posicion = posicion -8; // -8 por los perros del otro jugador
+	    tss_jugadorB[posicion].cs = 0x5B;
+	    tss_jugadorB[posicion].es = 0x53;
+	    tss_jugadorB[posicion].gs = 0x53;
+	    tss_jugadorB[posicion].ss = 0x53;
+	    tss_jugadorB[posicion].ds = 0x53;
+	    tss_jugadorB[posicion].fs = 0x53;
+	    tss_jugadorB[posicion].eax = 0x0;
+	    tss_jugadorB[posicion].ebx = 0x0;
+	    tss_jugadorB[posicion].ecx = 0x0;
+	    tss_jugadorB[posicion].edx = 0x0;
+	    tss_jugadorB[posicion].esi = 0x0;
+	    tss_jugadorB[posicion].edi = 0x0;
+	    tss_jugadorB[posicion].esp = 0x0402000-0xC;
+	    tss_jugadorB[posicion].eip = 0x00401000;
+	    tss_jugadorB[posicion].eflags = 0x202;
+		tss_jugadorB[posicion].esp0 = (espCero+4096);
+		tss_jugadorB[posicion].eax = 0x0;
+		tss_jugadorB[posicion].iomap = 0xFFFF;
+		tss_jugadorB[posicion].ldt = 0x00000000;
+		tss_jugadorA[posicion].ss0 = 0x48;
+
 		uint nuevoCr3 = mmu_inicializar_memoria_perro(rrope, jugador, perro);
-		tss_jugadorB[perro].cr3 = nuevoCr3;
-
-
-		gdt[14+perro].base_0_15 = (uint )&tss_jugadorA[perro] & 0x0000FFFF;
-		gdt[14+perro].base_23_16 = ((uint )&tss_jugadorA[perro] & 0x00FF0000) >> 16;
-		gdt[14+perro].base_31_24 = ((uint )&tss_jugadorA[perro] & 0xFF000000) >> 24;
+		
+		tss_jugadorB[posicion].cr3 = nuevoCr3;
+		gdt[22+posicion].base_0_15 =   (uint )&tss_jugadorA[posicion] & 0x0000FFFF;
+		gdt[22+posicion].base_23_16 = ((uint )&tss_jugadorA[posicion] & 0x00FF0000) >> 16;
+		gdt[22+posicion].base_31_24 = ((uint )&tss_jugadorA[posicion] & 0xFF000000) >> 24;
 	}
 }

@@ -36,8 +36,8 @@ extern game_syscall_manejar
 ;; Definición de MACROS
 ;; -------------------------------------------------------------------------- ;;
 
-selector: dw 0
-offset: dd 0
+guardar: dw 0
+
 
 exception0 db     'Divide Error', 0
 exception1 db     'RESERVED', 0
@@ -142,8 +142,9 @@ _isr32:
     je .fin
 
     xchg bx, bx
-    mov [selector], ax
-    jmp selector:offset
+    mov [sched_tarea_selector], ax
+    jmp far [sched_tarea_offset]
+    
 
     .fin:
        ; call screen_actualizar_reloj_global
@@ -186,12 +187,17 @@ _isr70:
     pushad
 
     push ecx
-    push ebx
+    push eax
 	call game_syscall_manejar
 	add esp, 4
 	add esp, 4
 
+    mov [guardar], eax
+
     popad
+
+    mov eax, [guardar]
+
     iret
 
 

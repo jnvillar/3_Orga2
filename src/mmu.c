@@ -131,8 +131,8 @@ uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_
 	}
 	
 	uint aCopiar;
-	if (index_jugador == 1){
-		if (perro->tipo == 1){ 			// TAREA A1
+	if (index_jugador == 0){
+		if (perro->tipo == 0){ 			// TAREA A1
 			aCopiar = 0x10000;
 		} else {		 				// TAREA A2
 			aCopiar = 0x11000;
@@ -140,7 +140,7 @@ uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_
 		mmu_mapear_pagina(0x400000, (uint) pagDir, paginaJugadorA, 0x007);
 
 	} else{
-		if (perro->tipo == 1){ 			// TAREA B1
+		if (perro->tipo == 0){ 			// TAREA B1
 			aCopiar = 0x12000;
 		} else {				 		// TAREA B2
 			aCopiar = 0x13000;

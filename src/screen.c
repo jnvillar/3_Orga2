@@ -83,7 +83,14 @@ void imprim(char letra){
 
     }
     if (letra == 0x12){
+        /*
         print("e",0,0,3);
+        perro_t perro;
+        indexPerros = sched_buscar_tarea_libre(0);
+        game_perro_inicializar(&perro, &jugadorA, indexPerros, idJugadorA);
+        idJugadorA++;       
+        game_perro_reciclar_y_lanzar(&perro, 0);
+        */
     }
     if (letra == 0x16){
         print("u",0,0,3);

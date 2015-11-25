@@ -35,7 +35,7 @@ gdt_entry gdt[GDT_COUNT] = {
 
     // CODIGO, NIVEL 0 (E/R)
     [GDT_IDX_NULL_DESC+8] = (gdt_entry) {
-        (unsigned short)    0xF400,         /* limit[0:15]  */
+        (unsigned short)    0xF3FF,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
         (unsigned char)     0x0A,           /* type         */
@@ -52,7 +52,7 @@ gdt_entry gdt[GDT_COUNT] = {
 
     // DATA, NIVEL 0 (R/W)
     [GDT_IDX_NULL_DESC+9] = (gdt_entry) {
-        (unsigned short)    0xF400,         /* limit[0:15]  */
+        (unsigned short)    0xF3FF,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
         (unsigned char)     0x02,           /* type         */
@@ -69,7 +69,7 @@ gdt_entry gdt[GDT_COUNT] = {
 
     // DATA, NIVEL 3 (R/W)
     [GDT_IDX_NULL_DESC+10] = (gdt_entry) {
-        (unsigned short)    0xF400,         /* limit[0:15]  */
+        (unsigned short)    0xF3FF,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
         (unsigned char)     0x02,           /* type         */
@@ -87,7 +87,7 @@ gdt_entry gdt[GDT_COUNT] = {
 
     // CODIGO, NIVEL 3 (E/R)
     [GDT_IDX_NULL_DESC+11] = (gdt_entry) {
-        (unsigned short)    0xF400,         /* limit[0:15]  */
+        (unsigned short)    0xF3FF,         /* limit[0:15]  */
         (unsigned short)    0x0000,         /* base[0:15]   */
         (unsigned char)     0x00,           /* base[23:16]  */
         (unsigned char)     0x0A,           /* type         */

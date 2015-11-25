@@ -28,7 +28,7 @@ void sched_inicializar()
 
 
 
-int sched_buscar_indice_tarea(uint gdt_index) {
+int sched_buscar_indice_tarea(uint gdt_index) { 
     int i = 0;
     while(i<=MAX_CANT_TAREAS_VIVAS){
     	if(scheduler.tasks[i].perro != NULL && scheduler.tasks[i].gdt_index == gdt_index){
@@ -36,6 +36,7 @@ int sched_buscar_indice_tarea(uint gdt_index) {
     	}
     	i++;
     }
+    //error();
     return 1000;    
 }
 
@@ -95,9 +96,8 @@ void sched_remover_tarea(unsigned int gdt_index)
 		if(scheduler.tasks[i].gdt_index == gdt_index){			
 			scheduler.tasks[i].perro = NULL;
 		}
-	}
-
-	
+		i++;
+	}	
 }
 
 
@@ -114,10 +114,8 @@ uint sched_proxima_a_ejecutar()
 			j++;
 			i++;
 		}  
-
 		j = 0;
 		i = scheduler.current;
-
 		while(j<=MAX_CANT_TAREAS_VIVAS){
 			if(scheduler.tasks[i%(MAX_CANT_TAREAS_VIVAS+1)].perro != NULL){
 				return i%(MAX_CANT_TAREAS_VIVAS+1);
@@ -126,7 +124,6 @@ uint sched_proxima_a_ejecutar()
 			i++;
 		} 
 	} else {
-
 		while(j<=MAX_CANT_TAREAS_VIVAS){
 			if(scheduler.tasks[i%(MAX_CANT_TAREAS_VIVAS+1)].perro != NULL){
 				return i%(MAX_CANT_TAREAS_VIVAS+1);
@@ -135,9 +132,6 @@ uint sched_proxima_a_ejecutar()
 			i++;
 		} 
 	}
-	 
-
-
 	return 0;   
 	
 }
@@ -146,12 +140,13 @@ uint sched_proxima_a_ejecutar()
 ushort sched_atender_tick()
 {
    
-    if(sched_tarea_actual() == scheduler.tasks[sched_proxima_a_ejecutar()].perro){    	
+    int prox = sched_proxima_a_ejecutar();
+    if(sched_tarea_actual() == scheduler.tasks[prox].perro){    	
     	
     	return scheduler.tasks[scheduler.current].gdt_index;
     	
     }else{
-    	scheduler.current = sched_proxima_a_ejecutar();
+    	scheduler.current = prox;
     	return scheduler.tasks[scheduler.current].gdt_index;
     }
     
