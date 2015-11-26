@@ -141,13 +141,13 @@ _isr32:
     cmp ax,cx
     je .fin
 
-    xchg bx, bx
+    ;xchg bx, bx
     mov [sched_tarea_selector], ax
     jmp far [sched_tarea_offset]
     
 
     .fin:
-       ; call screen_actualizar_reloj_global
+       call screen_actualizar_reloj_global
     
     pop eax
     popad
@@ -185,7 +185,6 @@ _isr33:
 global _isr70
 _isr70:
     pushad
-
     push ecx
     push eax
 	call game_syscall_manejar

@@ -18,16 +18,15 @@ void wait(int pseudosecs)
 }
 
 
-uint game_syscall_manejar(uint syscall, uint param1)
-{
+uint game_syscall_manejar(uint syscall, uint param1){
     
 if(syscall == 1){
 	game_perro_mover(sched_tarea_actual(), param1);
-}else if(syscall == 2){
+} else if(syscall == 2){
 	game_perro_cavar(sched_tarea_actual());
-}else if(syscall == 3){
-	game_perro_olfatear(sched_tarea_actual());
-}else if(syscall == 4){
+} else if(syscall == 3){
+	return game_perro_olfatear(sched_tarea_actual());
+} else if(syscall == 4){
 
 }
     return 0;

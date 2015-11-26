@@ -4,6 +4,7 @@
 #include "screen.h"
 #include "tss.h"
 
+int printf(const char *fmt, ...);
 
 // realiza inicialización básica de un perro. El perro aun no está vivo ni por lanzarse. Setea jugador, indice, etc
 void game_perro_inicializar(perro_t *perro, jugador_t *j, uint index, uint id)
@@ -11,7 +12,7 @@ void game_perro_inicializar(perro_t *perro, jugador_t *j, uint index, uint id)
 	perro->id   = id;
     perro->index = index;
     perro->jugador = j;
-	perro->libre = TRUE;
+	perro->libre = TRUE; 		
 
 //	~~~ completar si es necesario ~~~
 
@@ -25,6 +26,8 @@ void game_perro_reciclar_y_lanzar(perro_t *perro, uint tipo)
 
 	perro->x = j->x_cucha;
 	perro->y = j->y_cucha;
+
+	
 	perro->tipo = tipo;
 	perro->libre = FALSE;
 
@@ -33,6 +36,9 @@ void game_perro_reciclar_y_lanzar(perro_t *perro, uint tipo)
 	mmu_inicializar_memoria_perro(perro,perro->jugador->index, tipo);
 	sched_agregar_tarea(perro);
 	tss_completar(perro->jugador->index, perro->index, perro);
+
+
+
 
 	//screen_actualizar_posicion_mapa(perro->x, perro-> y);
 	//breakpoint();
@@ -74,6 +80,11 @@ uint game_dir2xy(/* in */ direccion dir, /* out */ int *x, /* out */ int *y)
 uint game_perro_mover(perro_t *perro, direccion dir)
 {
 
+	
+
+	
+	
+
    	//breakpoint();
 
 	int x, y;
@@ -85,9 +96,9 @@ uint game_perro_mover(perro_t *perro, direccion dir)
 
     // ~~~ completar ~~~
 
-   	if (game_perro_en_posicion(nuevo_x,nuevo_y) != NULL){
+   	if (game_perro_en_posicion(nuevo_x,nuevo_y) != NULL){ 			
    		if (game_perro_en_posicion(nuevo_x,nuevo_y)->jugador == perro->jugador){ 		// PARA QUE NO PISE EL PERRO, SI TIENEN EL MISMO DUEÑO
-
+   			// CUIDADO, SE PODRIAN TRABAR
    		} else { 			// QUE PISE EL PERRO SI EL DUEÑO ES DISTINTO
    			perro->x = nuevo_x;
    			perro->y = nuevo_y;
@@ -98,6 +109,14 @@ uint game_perro_mover(perro_t *perro, direccion dir)
    			}
 
    		}
+   	} else {
+   		perro->x = nuevo_x;
+		perro->y = nuevo_y;
+		mmu_mover_perro(perro, viejo_x, viejo_y);		
+		screen_actualizar_posicion_mapa(perro->x, perro->y);
+		if((nuevo_x>79 || nuevo_y>49) || (nuevo_x == perro->jugador->x_cucha && nuevo_y == perro->jugador->y_cucha)){
+			game_perro_termino(perro);
+		}
    	}
     
     

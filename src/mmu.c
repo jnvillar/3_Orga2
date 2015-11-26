@@ -7,8 +7,10 @@
 
 #include "mmu.h"
 #include "i386.h"
+
 /* Atributos paginas */
 /* -------------------------------------------------------------------------- */
+int printf(const char *fmt, ...);
 
 extern void aux_limpiarPantalla();
 extern void print(const char * text, unsigned int x, unsigned int y, unsigned short attr);
@@ -183,10 +185,16 @@ void mmu_copiar_pagina(uint src, uint dst){
 	}
 }
 
-void mmu_mover_perro(perro_t *perro, int viejo_x, int viejo_y){
-	mmu_copiar_pagina(mmu_xy2fisica(viejo_x,viejo_y),mmu_xy2fisica(perro->x,perro->y));
-	mmu_mapear_pagina(mmu_xy2fisica(perro->x,perro->y), rcr3(), mmu_xy2fisica(perro->x,perro->y),0x007);
+void mmu_mover_perro(perro_t *perro, uint viejo_x, uint viejo_y){
+	
+	//mmu_mapear_pagina(mmu_xy2fisica(perro->x,perro->y), rcr3(), mmu_xy2fisica(perro->x,perro->y),0x007);
 	mmu_mapear_pagina(0x401000, rcr3(), mmu_xy2fisica(perro->x,perro->y),0x007);
+	breakpoint();
+	mmu_copiar_pagina(mmu_xy2virtual(viejo_x,viejo_y),0x401000); 		// ACA SE ROMPE
+	breakpoint();
+
+	mmu_mapear_pagina(mmu_xy2fisica(perro->x,perro->y), rcr3(), mmu_xy2virtual(perro->x,perro->y),0x007);
+	breakpoint();
 
 }
 
