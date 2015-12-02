@@ -121,7 +121,7 @@ void mmu_inicializar(){
 
 }
 
-
+/*
 uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_tipo){
 	
 	uint *pagDir = (uint *) mmu_proxima_pagina_fisica_libre(); 	// PIDO UNA PAGINA LIBRE
@@ -173,7 +173,7 @@ uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_
 	tlbflush();
 	return (uint ) pagDir;
 }
-
+*/
 
 void mmu_copiar_pagina(uint src, uint dst){
 	uint *sr = (uint *) src;
@@ -189,12 +189,10 @@ void mmu_mover_perro(perro_t *perro, uint viejo_x, uint viejo_y){
 	
 	//mmu_mapear_pagina(mmu_xy2fisica(perro->x,perro->y), rcr3(), mmu_xy2fisica(perro->x,perro->y),0x007);
 	mmu_mapear_pagina(0x401000, rcr3(), mmu_xy2fisica(perro->x,perro->y),0x007);
-	breakpoint();
-	mmu_copiar_pagina(mmu_xy2virtual(viejo_x,viejo_y),0x401000); 		// ACA SE ROMPE
-	breakpoint();
+	mmu_copiar_pagina(mmu_xy2virtual(viejo_x,viejo_y),0x401000); 
 
 	mmu_mapear_pagina(mmu_xy2fisica(perro->x,perro->y), rcr3(), mmu_xy2virtual(perro->x,perro->y),0x007);
-	breakpoint();
+	//breakpoint();
 
 }
 
@@ -206,3 +204,75 @@ uint mmu_xy2fisica(uint x, uint y){
 uint mmu_xy2virtual(uint x, uint y){
 	return 0x800000+x*4096+y*4096*80;
 }
+
+
+
+uint mmu_inicializar_memoria_perro(perro_t *perro, int index_jugador, int index_tipo){
+	
+	uint *pagDir = (uint *) mmu_proxima_pagina_fisica_libre(); 	// PIDO UNA PAGINA LIBRE
+	mmu_inicializar_pagina(pagDir); 	// LIMPIO PAGINA
+	
+	int i = 0x00000000;
+	while (i<1024){ 				
+		mmu_mapear_pagina(i*4096,(uint )pagDir,i*4096,0x007);
+		i++;
+	}
+	
+	uint aCopiar;
+	if (index_jugador == 0){
+		if (perro->tipo == 0){ 			// TAREA A1
+			aCopiar = 0x10000;
+		} else {		 				// TAREA A2
+			aCopiar = 0x11000;
+		}
+		mmu_mapear_pagina(0x400000, (uint) pagDir, paginaJugadorA, 0x007);
+
+	} else{
+		if (perro->tipo == 0){ 			// TAREA B1
+			aCopiar = 0x12000;
+		} else {				 		// TAREA B2
+			aCopiar = 0x13000;
+		}
+		mmu_mapear_pagina(0x400000, (uint) pagDir, paginaJugadorB, 0x007);
+
+	}
+	
+	
+	int j = 0;						// ESTO NO DEBERIA ESTAR, PERO SI LO SACO DEJA DE ANDAR
+	while (j<3520){ 				// MAPEO CON EL MAPA
+		mmu_mapear_pagina(0x800000+j*4096,(uint )pagDir,j*4096+0x500000,0x007);
+		j++;
+	}
+
+	mmu_mapear_pagina(0x800000,(uint )pagDir, mmu_xy2fisica(perro->jugador->x_cucha,perro->jugador->y_cucha),0x007); 	// Y ESTO RESULTA AHORA IRRELEVANTE
+
+	mmu_mapear_pagina(0x401000, (uint) pagDir, mmu_xy2fisica(perro->jugador->x_cucha,perro->jugador->y_cucha), 0x007);
+    uint viejo_cr3 = rcr3();
+	mmu_mapear_pagina(0x401000, (uint) 0x27000, mmu_xy2fisica(perro->jugador->x_cucha,perro->jugador->y_cucha), 0x007);
+    lcr3(0x27000);
+	mmu_copiar_pagina(aCopiar,0x401000);
+    lcr3(viejo_cr3);
+
+   
+
+
+	tlbflush();
+	return (uint ) pagDir;
+}
+/*
+uint dondeCopiar = 0x500000 + (perro->jugador->x_cucha + perro->jugador->y_cucha*80)*4;
+	
+	int j = 0;
+	while (j<3520){ 				// MAPEO CON EL MAPA
+		mmu_mapear_pagina(0x800000+j*4096,(uint )pagDir,j*4096+0x500000,0x007);
+		j++;
+	}
+    //breakpoint();
+	mmu_mapear_pagina(0x401000, (uint) pagDir, dondeCopiar, 0x007);
+    uint viejo_cr3 = rcr3();
+	mmu_mapear_pagina(0x401000, (uint) 0x27000, dondeCopiar, 0x007);
+    lcr3(0x27000);
+	//breakpoint();
+	mmu_copiar_pagina(aCopiar,0x401000);
+    lcr3(viejo_cr3);
+*/
